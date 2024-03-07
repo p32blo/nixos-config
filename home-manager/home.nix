@@ -51,6 +51,11 @@
       br = "branch --sort=-committerdate --column";
       tree = "log --graph --oneline --decorate";
     };
+    extraConfig = {
+      rerere = {
+        enable = true;
+      };
+    };
     includes = [
       {
         condition = "gitdir:~/Work/";
