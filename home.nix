@@ -36,6 +36,17 @@
       br = "branch --sort=-committerdate --column";
       tree = "log --graph --oneline --decorate";
     };
+    includes = [
+      {
+        condition = "gitdir:~/Work/";
+        contents = {
+          user = {
+            name = "André Oliveira";
+            email = "andre.oliveira@q-better.com";
+          };
+        };
+      }
+    ];
   };
 
   home.stateVersion = "23.11";
