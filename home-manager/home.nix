@@ -26,6 +26,21 @@
     mqtt-explorer
   ];
 
+  programs.bash = {
+    enable = true;
+    shellAliases = let
+      eza-sort-args = "--git --group --group-directories-first --header --sort=extension";
+    in {
+      ll = "eza -l ${eza-sort-args}";
+      l = "eza -la ${eza-sort-args}";
+    };
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableBashIntegration = true;
+  };
+
   programs.git = {
     enable = true;
     userName = "André Oliveira";
