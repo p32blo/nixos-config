@@ -4,9 +4,6 @@
 
 { config, pkgs, ... }:
 
-let 
-    mqtt-explorer = import ./mqtt-explorer.nix;
-in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -98,7 +95,6 @@ in
       vscode
       wireshark
       insomnia
-      mqtt-explorer
     
       blender
       gimp
