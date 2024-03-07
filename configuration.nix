@@ -92,7 +92,7 @@
       firefox
       thunderbird
 
-      obsidian
+      unstable.obsidian
       vscode
       wireshark
       insomnia
@@ -109,9 +109,10 @@
     ];
   };
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"
-  ];
+  #nixpkgs.config.permittedInsecurePackages = [
+  #  "electron-25.9.0"
+  #];
+
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "andre";
