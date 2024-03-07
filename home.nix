@@ -23,7 +23,7 @@
     discord
     rpi-imager
     jetbrains.pycharm-professional
-    (callPackage ./mqtt-explorer.nix {})
+    mqtt-explorer
   ];
 
   programs.git = {

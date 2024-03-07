@@ -19,6 +19,11 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
+
+    additions = final: _prev: {
+      mqtt-explorer = final.callPackage ./pkgs/mqtt-explorer.nix {};
+    };
+
     overlay-unstable = final: prev: {
       unstable = import nixpkgs-unstable {
         inherit system;
@@ -34,7 +39,7 @@
           config,
           pkgs,
           ...
-        }: {nixpkgs.overlays = [overlay-unstable];})
+        }: {nixpkgs.overlays = [overlay-unstable additions];})
         # Main config file
         ./configuration.nix
 
