@@ -6,23 +6,8 @@
       "encryption": false,
       "host": "localhost",
       "id": "184d0f84-aa03-44c1-8ebf-3d4c2c2511bb",
-      "name": "localhost",
+      "name": "LOCALHOST",
       "port": "1883",
-      "protocol": "mqtt",
-      "subscriptions": [
-        "#",
-        "$SYS/#"
-      ],
-      "type": "mqtt"
-    },
-    "c858a110-f753-46e0-a11e-080ca2ca9863": {
-      "certValidation": false,
-      "clientId": "mqtt-explorer-298d7c77",
-      "encryption": true,
-      "host": "mqtt.dev.qube.q-better.com",
-      "id": "c858a110-f753-46e0-a11e-080ca2ca9863",
-      "name": "DEV",
-      "port": "8883",
       "protocol": "mqtt",
       "subscriptions": [
         "#",
@@ -34,31 +19,49 @@
       "certValidation": false,
       "clientId": "mqtt-explorer-e5539d67",
       "encryption": true,
-      "host": "mqtt.test.myqube.io",
+      "host": "mqtt.dev.qube.q-better.com",
       "id": "2f22cf70-bb19-406d-898d-ba5dc7f70f91",
-      "name": "TEST",
-      "port": "8893",
-      "protocol": "mqtt",
-      "subscriptions": [
-        "#",
-        "$SYS/#"
-      ],
-      "type": "mqtt"
-    },
-    "74e60638-ccfd-4290-a43f-5899e0ab67a2": {
-      "certValidation": false,
-      "clientId": "mqtt-explorer-3c62cb83",
-      "encryption": true,
-      "host": "mqtt.myqube.io",
-      "id": "74e60638-ccfd-4290-a43f-5899e0ab67a2",
-      "name": "PROD",
+      "name": "Qube DEV",
       "port": "8883",
       "protocol": "mqtt",
       "subscriptions": [
         "#",
         "$SYS/#"
       ],
-      "type": "mqtt"
+      "type": "mqtt",
+      "username": "<token>"
+    },
+    "74e60638-ccfd-4290-a43f-5899e0ab67a2": {
+      "certValidation": false,
+      "clientId": "mqtt-explorer-3c62cb83",
+      "encryption": true,
+      "host": "mqtt.test.qube.q-better.com",
+      "id": "74e60638-ccfd-4290-a43f-5899e0ab67a2",
+      "name": "Qube TEST",
+      "port": "8893",
+      "protocol": "mqtt",
+      "subscriptions": [
+        "#",
+        "$SYS/#"
+      ],
+      "type": "mqtt",
+      "username": "<token>"
+    },
+    "c858a110-f753-46e0-a11e-080ca2ca9863": {
+      "certValidation": false,
+      "clientId": "mqtt-explorer-298d7c77",
+      "encryption": true,
+      "host": "mqtt.myqube.io",
+      "id": "c858a110-f753-46e0-a11e-080ca2ca9863",
+      "name": "Qube PROD",
+      "port": "8883",
+      "protocol": "mqtt",
+      "subscriptions": [
+        "#",
+        "$SYS/#"
+      ],
+      "type": "mqtt",
+      "username": "<token>"
     }
   },
   "Settings": {
