@@ -51,6 +51,12 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  environment.gnome.excludePackages = with pkgs.gnome; [
+    geary
+    pkgs.gnome-tour
+    gnome-weather
+  ];
+
   # Configure keymap in X11
   services.xserver = {
     layout = "pt";
@@ -125,6 +131,7 @@
 
   environment.variables.EDITOR = "vim";
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.optimise.automatic = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
