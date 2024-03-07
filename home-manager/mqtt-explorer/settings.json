@@ -1,0 +1,105 @@
+{
+  "ConnectionManager_connections": {
+    "184d0f84-aa03-44c1-8ebf-3d4c2c2511bb": {
+      "certValidation": false,
+      "clientId": "test-123",
+      "encryption": false,
+      "host": "localhost",
+      "id": "184d0f84-aa03-44c1-8ebf-3d4c2c2511bb",
+      "name": "localhost",
+      "password": "",
+      "port": "1883",
+      "protocol": "mqtt",
+      "subscriptions": [
+        "#",
+        "$SYS/#"
+      ],
+      "type": "mqtt"
+    },
+    "2f22cf70-bb19-406d-898d-ba5dc7f70f91": {
+      "certValidation": false,
+      "clientId": "mqtt-explorer-e5539d67",
+      "encryption": true,
+      "host": "mqtt.test.myqube.io",
+      "id": "2f22cf70-bb19-406d-898d-ba5dc7f70f91",
+      "name": "TEST",
+      "port": "8893",
+      "protocol": "mqtt",
+      "subscriptions": [
+        "#",
+        "$SYS/#"
+      ],
+      "type": "mqtt"
+    },
+    "74e60638-ccfd-4290-a43f-5899e0ab67a2": {
+      "certValidation": false,
+      "clientId": "mqtt-explorer-3c62cb83",
+      "encryption": true,
+      "host": "mqtt.myqube.io",
+      "id": "74e60638-ccfd-4290-a43f-5899e0ab67a2",
+      "name": "PROD",
+      "port": "8883",
+      "protocol": "mqtt",
+      "subscriptions": [
+        "#",
+        "$SYS/#"
+      ],
+      "type": "mqtt"
+    },
+    "c858a110-f753-46e0-a11e-080ca2ca9863": {
+      "certValidation": false,
+      "clientId": "mqtt-explorer-298d7c77",
+      "encryption": true,
+      "host": "mqtt.dev.qube.q-better.com",
+      "id": "c858a110-f753-46e0-a11e-080ca2ca9863",
+      "name": "DEV",
+      "password": "",
+      "port": "8883",
+      "protocol": "mqtt",
+      "subscriptions": [
+        "#",
+        "$SYS/#"
+      ],
+      "type": "mqtt"
+    },
+    "mqtt.eclipse.org": {
+      "certValidation": true,
+      "clientId": "mqtt-explorer-6cd98a58",
+      "encryption": false,
+      "host": "mqtt.eclipse.org",
+      "id": "mqtt.eclipse.org",
+      "name": "mqtt.eclipse.org",
+      "password": "mikepassword",
+      "port": 1883,
+      "protocol": "mqtt",
+      "subscriptions": [
+        "#",
+        "$SYS/#"
+      ],
+      "type": "mqtt"
+    },
+    "test.mosquitto.org": {
+      "certValidation": true,
+      "clientId": "mqtt-explorer-b9510a2e",
+      "encryption": false,
+      "host": "test.mosquitto.org",
+      "id": "test.mosquitto.org",
+      "name": "test.mosquitto.org",
+      "port": 1883,
+      "protocol": "mqtt",
+      "subscriptions": [
+        "#",
+        "$SYS/#"
+      ],
+      "type": "mqtt"
+    }
+  },
+  "Settings": {
+    "highlightTopicUpdates": true,
+    "selectTopicWithMouseOver": true,
+    "theme": "dark",
+    "timeLocale": "en-US",
+    "topicOrder": "abc",
+    "valueRendererDisplayMode": "raw"
+  }
+}

@@ -48,6 +48,9 @@
       }
     ];
   };
+  home.file = {
+    ".config/MQTT-Explorer/settings.json".source = ./mqtt-explorer/settings.json;
+  };
 
   home.stateVersion = "23.11";
   programs.home-manager.enable = true;
