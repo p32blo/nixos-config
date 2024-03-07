@@ -98,13 +98,14 @@
     
       blender
       gimp
+      vlc
 
       spotify
       discord
       rpi-imager
       jetbrains.pycharm-professional
+      (callPackage ./mqtt-explorer.nix {})
     ];
-
   };
 
   nixpkgs.config.permittedInsecurePackages = [
@@ -138,11 +139,10 @@
 
     htop
     jq
-   
-    vlc
   ];
 
   environment.variables.EDITOR = "vim";
+  nix.settings.experimental-features = [ "nix-command" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
