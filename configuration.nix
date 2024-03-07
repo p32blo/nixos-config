@@ -88,21 +88,6 @@
     isNormalUser = true;
     description = "andre";
     extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [
-      firefox
-      thunderbird
-
-      unstable.obsidian
-      vscode
-      wireshark
-      insomnia
-
-      spotify
-      discord
-      rpi-imager
-      jetbrains.pycharm-professional
-      (callPackage ./mqtt-explorer.nix {})
-    ];
   };
 
   # Enable automatic login for the user.

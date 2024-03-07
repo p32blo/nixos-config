@@ -7,9 +7,23 @@
   home.homeDirectory = "/home/andre";
 
   home.packages = with pkgs; [
+    firefox
+    thunderbird
+
+    unstable.obsidian
+    vscode
+    wireshark
+    insomnia
+
     blender
     gimp
     vlc
+
+    spotify
+    discord
+    rpi-imager
+    jetbrains.pycharm-professional
+    (callPackage ./mqtt-explorer.nix {})
   ];
 
   programs.git = {
