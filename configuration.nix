@@ -4,6 +4,9 @@
 
 { config, pkgs, ... }:
 
+let 
+    mqtt-explorer = import ./mqtt-explorer.nix;
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -94,6 +97,8 @@
       obsidian
       vscode
       wireshark
+      insomnia
+      mqtt-explorer
     
       blender
       gimp
@@ -127,7 +132,9 @@
     wget
     curl
     git 
+    file
 
+    eza
     du-dust
     ripgrep
     fd
@@ -139,7 +146,7 @@
     vlc
   ];
 
-  virtualisation.virtualbox.guest.enable = true;
+  environment.variables.EDITOR = "vim";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
