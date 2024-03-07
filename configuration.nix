@@ -132,6 +132,7 @@
     file
 
     eza
+    bat
     du-dust
     ripgrep
     fd
