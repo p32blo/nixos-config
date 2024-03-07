@@ -90,9 +90,23 @@
     packages = with pkgs; [
       firefox
       thunderbird
+
+      obsidian
+      vscode
+      wireshark
+    
+      blender
+      gimp
+
+      spotify
+      discord
     ];
+
   };
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "andre";
@@ -110,15 +124,15 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     git 
+
     du-dust
     ripgrep
     fd
     zellij
 
-    blender
-    gimp
-
-    spotify
+    htop
+   
+    vlc
   ];
 
   virtualisation.virtualbox.guest.enable = true;
