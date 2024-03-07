@@ -2,11 +2,11 @@
 
 let 
   pname = "MQTT-Explorer";
-  version = "0.4.0-beta1";
+  version = "0.3.5";
   name = "mqtt-explorer";
   src = fetchurl {
-    url = "https://github.com/thomasnordquist/${pname}/releases/download/0.0.0-${version}/${pname}-${version}.AppImage";
-    sha256 = "9l6i2qNRUo8I1ghMqPirD45FYqMFUjrFnDZYOILaKnU=";
+    url = "https://github.com/thomasnordquist/${pname}/releases/download/v${version}/${pname}-${version}.AppImage";
+    sha256 = "Yfz42+dVIx3xwIOmYltp5e9rYka+KskvQuxJVVBgbg4=";
   };
   appImageContents=appimageTools.extractType2 { inherit name src;};
   
