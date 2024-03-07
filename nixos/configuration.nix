@@ -51,8 +51,10 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  # Remove some superfulous GNOME applications
   environment.gnome.excludePackages = with pkgs.gnome; [
     geary
+    epiphany
     pkgs.gnome-tour
     gnome-weather
   ];
