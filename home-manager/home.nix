@@ -49,7 +49,10 @@
     ];
   };
   home.file = {
-    ".config/MQTT-Explorer/settings.json".source = ./mqtt-explorer/settings.json;
+    ".config/MQTT-Explorer/settings.json" = {
+      source = ./mqtt-explorer/settings.json;
+      force = true;
+    };
   };
 
   home.stateVersion = "23.11";
