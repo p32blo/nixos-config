@@ -23,7 +23,7 @@
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
-        ./configuration.nix
+        ./nixos/configuration.nix
         {nixpkgs.overlays = import ./overlays {inherit inputs;};}
 
         home-manager.nixosModules.home-manager
