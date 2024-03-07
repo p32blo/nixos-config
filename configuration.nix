@@ -97,10 +97,6 @@
       wireshark
       insomnia
 
-      blender
-      gimp
-      vlc
-
       spotify
       discord
       rpi-imager
