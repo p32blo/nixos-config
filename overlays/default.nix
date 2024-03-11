@@ -1,7 +1,9 @@
 {inputs, ...}: [
-  (
-    final: prev: import ../pkgs {pkgs = final;}
-  )
+  (final: prev: {
+    local = import ../pkgs {
+      pkgs = final;
+    };
+  })
 
   (final: prev: {
     unstable = import inputs.nixpkgs-unstable {

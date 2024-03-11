@@ -23,7 +23,8 @@
     discord
     rpi-imager
     jetbrains.pycharm-professional
-    mqtt-explorer
+
+    local.mqtt-explorer
   ];
 
   programs.bash = {
