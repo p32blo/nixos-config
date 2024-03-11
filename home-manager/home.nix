@@ -14,6 +14,7 @@
     vscode
     wireshark
     insomnia
+    unstable.bruno
 
     blender
     gimp
@@ -49,12 +50,21 @@
     aliases = {
       st = "status";
       co = "checkout";
-      br = "branch --sort=-committerdate --column";
+      br = "branch --column";
       tree = "log --graph --oneline --decorate";
     };
     extraConfig = {
       rerere = {
         enable = true;
+      };
+      init = {
+        defaultBranch = "main";
+      };
+      diff = {
+        algorithm = "histogram";
+      };
+      branch = {
+        sort = "-committerdate";
       };
     };
     includes = [
