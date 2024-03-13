@@ -11,7 +11,7 @@
     thunderbird
 
     unstable.obsidian
-    vscode
+    unstable.vscode
     wireshark
     insomnia
     unstable.bruno
