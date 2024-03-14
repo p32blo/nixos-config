@@ -9,23 +9,25 @@
   home.packages = with pkgs; [
     firefox
     thunderbird
+    discord
+    spotify
 
-    unstable.obsidian
+    jetbrains.pycharm-professional
     unstable.vscode
-    wireshark
+    unstable.obsidian
+
     insomnia
     unstable.bruno
 
     blender
     gimp
+    wireshark
     vlc
 
-    spotify
-    discord
     rpi-imager
-    jetbrains.pycharm-professional
-
     local.mqtt-explorer
+    gupnp-tools # SSDP CLI
+    gssdp-tools # SSDP GUI
   ];
 
   programs.bash = {
