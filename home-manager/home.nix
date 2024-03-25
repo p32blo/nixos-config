@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   home.username = "andre";
@@ -17,7 +18,29 @@
     unstable.obsidian
 
     insomnia
-    unstable.bruno
+    (unstable.bruno.overrideAttrs (oldAttrs: rec {
+      pname = "bruno";
+      version = "1.12.2";
+      name = "${pname}-${version}";
+      src = fetchFromGitHub {
+        owner = "usebruno";
+        repo = "bruno";
+        rev = "v${version}";
+        hash = "sha256-DJFZk3yPg2YYqTy4rXXZ18slI2e3+pLk2Tk0UHH3MHk=";
+        postFetch = ''
+          patch -d $out <${/etc/nixos/home-manager/bruno-1-12-lockfile.patch}
+          ${lib.getExe pkgs.unstable.npm-lockfile-fix} $out/package-lock.json
+        '';
+      };
+      npmDepsHash = "sha256-uAOTJCavVxvOFEsVVpHpwmetIikAwkD6xnW6UGUiXnM=";
+
+      npmDeps = fetchNpmDeps {
+        inherit src;
+        name = "${name}-npm-deps";
+        hash = npmDepsHash;
+      };
+      makeCacheWritable = true;
+    }))
 
     blender
     gimp

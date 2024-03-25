@@ -51,6 +51,8 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  services.gnome.gnome-remote-desktop.enable = true;
+
   # Remove some superfulous GNOME applications
   services.xserver.excludePackages = [pkgs.xterm];
   environment.gnome.excludePackages = with pkgs.gnome; [
