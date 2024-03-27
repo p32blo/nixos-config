@@ -18,37 +18,7 @@
     unstable.obsidian
 
     insomnia
-    (let
-      brunoLockfilePatch_1_12_2 = fetchpatch {
-        url = "https://github.com/usebruno/bruno/pull/1894/commits/e3bab23446623315ee674283285a86e210778fe7.patch";
-        hash = "sha256-8rYBvgu9ZLXjb9AFyk4yMBVjcyFPmlNi66YEaQGQaKw=";
-      };
-    in
-      unstable.bruno.overrideAttrs (
-        oldAttrs: rec {
-          pname = "bruno";
-          version = "1.12.2";
-          name = "${pname}-${version}";
-          src = fetchFromGitHub {
-            owner = "usebruno";
-            repo = "bruno";
-            rev = "v${version}";
-            hash = "sha256-C/WeEloUGF0PEfeanm6lHe/MgpcF+g/ZY2tnqXFl9LA=";
-            postFetch = ''
-              patch -d $out <${brunoLockfilePatch_1_12_2}
-              ${lib.getExe pkgs.unstable.npm-lockfile-fix} $out/package-lock.json
-            '';
-          };
-          npmDepsHash = "sha256-Zt5cVB1S86iPYKOUj7FwyR97lwmnFz6sZ+S3Ms/b9+o=";
-
-          npmDeps = fetchNpmDeps {
-            inherit src;
-            name = "${name}-npm-deps";
-            hash = npmDepsHash;
-          };
-          makeCacheWritable = true;
-        }
-      ))
+    unstable.bruno
 
     blender
     gimp
