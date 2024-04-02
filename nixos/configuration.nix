@@ -124,14 +124,17 @@
     eza
     bat
     du-dust
+    dua
     ripgrep
     fd
     zellij
 
     htop
+    mtr
     jq
 
     alejandra
+    gnome.gnome-remote-desktop
   ];
 
   environment.variables.EDITOR = "vim";

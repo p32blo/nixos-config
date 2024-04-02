@@ -29,6 +29,8 @@
     local.mqtt-explorer
     gupnp-tools # SSDP CLI
     gssdp-tools # SSDP GUI
+
+    hyperfine
   ];
 
   programs.bash = {
