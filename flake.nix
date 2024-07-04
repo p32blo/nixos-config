@@ -9,6 +9,10 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+    };
   };
 
   outputs = {
@@ -16,24 +20,34 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
+    nixos-hardware,
     ...
   } @ inputs: let
     system = "x86_64-linux";
   in {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      inherit system;
-      modules = [
-        ./nixos/configuration.nix
-        {nixpkgs.overlays = import ./overlays {inherit inputs;};}
+    nixosConfigurations = {
+      nixos = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./nixos/configuration.nix
+          {nixpkgs.overlays = import ./overlays {inherit inputs;};}
 
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
 
-          home-manager.users.andre = import ./home-manager/home.nix;
-        }
-      ];
+            home-manager.users.andre = import ./home-manager/home.nix;
+          }
+        ];
+      };
+      rpi4 = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        modules = [
+          ./rpi4/configuration.nix
+          nixos-hardware.nixosModules.raspberry-pi-4
+        ];
+      };
     };
   };
 }
