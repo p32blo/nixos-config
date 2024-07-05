@@ -26,10 +26,10 @@
     system = "x86_64-linux";
   in {
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      nixos-desktop = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./hosts/nixos/configuration.nix
+          ./hosts/nixos-desktop/configuration.nix
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
 
           home-manager.nixosModules.home-manager
