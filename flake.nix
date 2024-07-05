@@ -49,6 +49,13 @@
           nixos-hardware.nixosModules.raspberry-pi-4
         ];
       };
+      nixos = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./hosts/nixos/configuration.nix
+          {nixpkgs.overlays = import ./overlays {inherit inputs;};}
+        ];
+      };
     };
   };
 }
