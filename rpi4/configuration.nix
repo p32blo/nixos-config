@@ -72,7 +72,11 @@ in {
   ];
 
   services.openssh.enable = true;
-  services.tailscale.enable = true;
+  services.tailscale = {
+    enable = true;
+    # revert to stable because tailscale is failing to startup
+    #package = pkgs.unstable.tailscale;
+  };
 
   users = {
     mutableUsers = false;
@@ -84,8 +88,8 @@ in {
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.optimise.automatic = true;
 
   hardware.enableRedistributableFirmware = true;
   system.stateVersion = "24.05";
-
 }

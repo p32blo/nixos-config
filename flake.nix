@@ -45,6 +45,7 @@
         system = "aarch64-linux";
         modules = [
           ./rpi4/configuration.nix
+          {nixpkgs.overlays = import ./overlays {inherit inputs;};}
           nixos-hardware.nixosModules.raspberry-pi-4
         ];
       };
