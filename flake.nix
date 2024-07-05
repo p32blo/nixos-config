@@ -29,7 +29,7 @@
       nixos = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./nixos/configuration.nix
+          ./hosts/nixos/configuration.nix
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
 
           home-manager.nixosModules.home-manager
@@ -44,7 +44,7 @@
       rpi4 = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         modules = [
-          ./rpi4/configuration.nix
+          ./hosts/rpi4/configuration.nix
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
           nixos-hardware.nixosModules.raspberry-pi-4
         ];
