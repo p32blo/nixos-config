@@ -8,28 +8,7 @@
   home.homeDirectory = "/home/andre";
 
   home.packages = with pkgs; [
-    firefox
-    thunderbird
-    discord
-    spotify
-
-    jetbrains.pycharm-professional
-    unstable.vscode
-    unstable.obsidian
-
-    insomnia
-    unstable.bruno
-
-    blender
-    gimp
-    wireshark
-    vlc
-
-    rpi-imager
-    local.mqtt-explorer
     gupnp-tools # SSDP CLI
-    gssdp-tools # SSDP GUI
-
     hyperfine
   ];
 
@@ -113,13 +92,6 @@
         hostname = "ec2-34-240-12-31.eu-west-1.compute.amazonaws.com";
         identityFile = "~/.ssh/aws_admin_rsa";
       };
-    };
-  };
-
-  home.file = {
-    ".config/MQTT-Explorer/settings.json" = {
-      source = ./mqtt-explorer/settings.json;
-      force = true;
     };
   };
 

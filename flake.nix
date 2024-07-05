@@ -37,7 +37,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.andre = import ./home-manager/home.nix;
+            home-manager.users.andre = import ./home-manager/home-gui.nix;
           }
         ];
       };
@@ -54,6 +54,14 @@
         modules = [
           ./hosts/nixos/configuration.nix
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.andre = import ./home-manager/home.nix;
+          }
         ];
       };
     };
