@@ -33,6 +33,19 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "pt_PT.UTF-8";
+    LC_IDENTIFICATION = "pt_PT.UTF-8";
+    LC_MEASUREMENT = "pt_PT.UTF-8";
+    LC_MONETARY = "pt_PT.UTF-8";
+    LC_NAME = "pt_PT.UTF-8";
+    LC_NUMERIC = "pt_PT.UTF-8";
+    LC_PAPER = "pt_PT.UTF-8";
+    LC_TELEPHONE = "pt_PT.UTF-8";
+    LC_TIME = "pt_PT.UTF-8";
+  };
+
   console = {
   #   font = "Lat2-Terminus16";
     keyMap = "pt-latin1";
@@ -66,13 +79,30 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
-
+  nixpkgs.config.allowUnfree = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    curl
     git
+    file
+
+    eza
+    bat
+    du-dust
+    dua
+    ripgrep
+    fd
+    zellij
+
+    htop
+    mtr
+    jq
+
+    alejandra
+    gnome.gnome-remote-desktop
     tree
   ];
 
@@ -101,6 +131,7 @@
   # accidentally delete configuration.nix.
   # system.copySystemConfiguration = true;
 
+  environment.variables.EDITOR = "vim";
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.optimise.automatic = true;
 
