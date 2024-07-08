@@ -49,9 +49,7 @@
   };
 
   console = {
-  #   font = "Lat2-Terminus16";
     keyMap = "pt-latin1";
-  #   useXkbConfig = true; # use xkb.options in tty.
   };
 
   # Enable the X11 windowing system.
