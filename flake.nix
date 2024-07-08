@@ -47,6 +47,14 @@
           ./hosts/rpi4/configuration.nix
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
           nixos-hardware.nixosModules.raspberry-pi-4
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.andre = import ./home-manager/home.nix;
+          }
         ];
       };
       nixos = nixpkgs.lib.nixosSystem {

@@ -4,8 +4,8 @@
   lib,
   ...
 }: let
-  user = "qube";
-  password = "qubeadmin";
+  user = "andre";
+  password = "andre";
   hostname = "rpi4";
 in {
   boot = {
@@ -40,10 +40,8 @@ in {
     LC_MEASUREMENT = "pt_PT.UTF-8";
     LC_MONETARY = "pt_PT.UTF-8";
     LC_NAME = "pt_PT.UTF-8";
-    LC_NUMERIC = "pt_PT.UTF-8";
     LC_PAPER = "pt_PT.UTF-8";
     LC_TELEPHONE = "pt_PT.UTF-8";
-    LC_TIME = "pt_PT.UTF-8";
   };
 
   console.keyMap = "pt-latin1";
