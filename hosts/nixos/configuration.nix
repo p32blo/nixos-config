@@ -1,14 +1,15 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
@@ -19,12 +20,12 @@
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
   boot.loader.grub.useOSProber = true;
 
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  boot.binfmt.emulatedSystems = ["aarch64-linux"];
 
   networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "Europe/Lisbon";
@@ -55,7 +56,6 @@
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
-
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -77,7 +77,7 @@
   # Define a user account. Don't forget to set a password with 'passwd'.
   users.users.andre = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable 'sudo' for the user.
+    extraGroups = ["wheel"]; # Enable 'sudo' for the user.
   };
   nixpkgs.config.allowUnfree = true;
   # List packages installed in system profile. To search, run:
@@ -155,6 +155,4 @@
   system.stateVersion = "24.05"; # Did you read the comment?
 
   virtualisation.virtualbox.guest.enable = true;
-
 }
-
