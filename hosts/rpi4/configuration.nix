@@ -11,6 +11,7 @@ in {
 
   imports = [
     ../locale.nix
+    ../networking.nix
   ];
 
   boot = {
@@ -30,10 +31,7 @@ in {
     };
   };
 
-  networking = {
-    hostName = hostname;
-    networkmanager.enable = true;
-  };
+  networking.hostName = hostname;
 
   environment.systemPackages = with pkgs; [
     vim
@@ -59,11 +57,6 @@ in {
     alejandra
   ];
 
-  services.openssh.enable = true;
-  services.tailscale = {
-    enable = true;
-    package = pkgs.unstable.tailscale;
-  };
 
   users = {
     mutableUsers = false;

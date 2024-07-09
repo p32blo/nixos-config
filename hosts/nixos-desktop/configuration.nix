@@ -10,6 +10,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../locale.nix
+    ../networking.nix
   ];
 
   # Bootloader.
@@ -18,14 +19,6 @@
   boot.loader.grub.useOSProber = true;
 
   networking.hostName = "nixos-desktop"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -120,29 +113,6 @@
   environment.variables.EDITOR = "vim";
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.optimise.automatic = true;
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-  services.tailscale = {
-    enable = true;
-    package = pkgs.unstable.tailscale;
-  };
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
