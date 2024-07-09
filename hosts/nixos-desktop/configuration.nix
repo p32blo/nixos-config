@@ -11,6 +11,7 @@
     ./hardware-configuration.nix
     ../locale.nix
     ../networking.nix
+    ../environment.nix
   ];
 
   # Bootloader.
@@ -84,35 +85,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    curl
-    git
-    file
-
-    eza
-    bat
-    du-dust
-    dua
-    ripgrep
-    fd
-    zellij
-
-    htop
-    mtr
-    jq
-
-    alejandra
-    gnome.gnome-remote-desktop
-  ];
-
-  environment.variables.EDITOR = "vim";
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-  nix.optimise.automatic = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

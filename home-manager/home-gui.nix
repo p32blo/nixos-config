@@ -25,6 +25,7 @@
     rpi-imager
     local.mqtt-explorer
     gssdp-tools # SSDP GUI
+    gnome.gnome-remote-desktop
   ];
 
   home.file = {

@@ -12,6 +12,7 @@ in {
   imports = [
     ../locale.nix
     ../networking.nix
+    ../environment.nix
   ];
 
   boot = {
@@ -33,31 +34,6 @@ in {
 
   networking.hostName = hostname;
 
-  environment.systemPackages = with pkgs; [
-    vim
-
-    wget
-    curl
-    git
-    file
-    rlwrap
-
-    eza
-    bat
-    du-dust
-    dua
-    ripgrep
-    fd
-    zellij
-
-    htop
-    mtr
-    jq
-
-    alejandra
-  ];
-
-
   users = {
     mutableUsers = false;
     users."${user}" = {
@@ -67,10 +43,7 @@ in {
     };
   };
 
-  environment.variables.EDITOR = "vim";
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-  nix.optimise.automatic = true;
-
   hardware.enableRedistributableFirmware = true;
+  
   system.stateVersion = "24.05";
 }
