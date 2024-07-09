@@ -8,7 +8,6 @@
   password = "andre";
   hostname = "rpi4";
 in {
-
   imports = [
     ../locale.nix
     ../networking.nix
@@ -44,6 +43,6 @@ in {
   };
 
   hardware.enableRedistributableFirmware = true;
-  
+
   system.stateVersion = "24.05";
 }
