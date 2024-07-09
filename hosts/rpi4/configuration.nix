@@ -10,7 +10,7 @@
 in {
 
   imports = [
-    ./locale.nix
+    ../locale.nix
   ];
 
   boot = {
