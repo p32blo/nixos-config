@@ -53,6 +53,7 @@ in {
     curl
     git
     file
+    rlwrap
 
     eza
     bat
