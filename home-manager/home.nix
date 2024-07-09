@@ -19,6 +19,7 @@
     in {
       ll = "eza -l ${eza-sort-args}";
       l = "eza -la ${eza-sort-args}";
+      ws = "rg --files-with-matches '[^\n]\z'";
     };
   };
 
@@ -38,6 +39,9 @@
       tree = "log --graph --oneline --decorate";
     };
     extraConfig = {
+      push = {
+        autoSetupRemote = true;
+      };
       rerere = {
         enable = true;
       };
