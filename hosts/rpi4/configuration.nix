@@ -8,6 +8,11 @@
   password = "andre";
   hostname = "rpi4";
 in {
+
+  imports = [
+    ./locale.nix
+  ];
+
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
     initrd.availableKernelModules = ["xhci_pci" "usbhid" "usb_storage"];
@@ -29,22 +34,6 @@ in {
     hostName = hostname;
     networkmanager.enable = true;
   };
-
-  time.timeZone = "Europe/Lisbon";
-
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "pt_PT.UTF-8";
-    LC_IDENTIFICATION = "pt_PT.UTF-8";
-    LC_MEASUREMENT = "pt_PT.UTF-8";
-    LC_MONETARY = "pt_PT.UTF-8";
-    LC_NAME = "pt_PT.UTF-8";
-    LC_PAPER = "pt_PT.UTF-8";
-    LC_TELEPHONE = "pt_PT.UTF-8";
-  };
-
-  console.keyMap = "pt-latin1";
 
   environment.systemPackages = with pkgs; [
     vim
