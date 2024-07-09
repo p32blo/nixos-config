@@ -72,8 +72,7 @@ in {
   services.openssh.enable = true;
   services.tailscale = {
     enable = true;
-    # revert to stable because tailscale is failing to startup
-    #package = pkgs.unstable.tailscale;
+    package = pkgs.unstable.tailscale;
   };
 
   users = {
