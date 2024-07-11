@@ -65,6 +65,16 @@
           };
         };
       }
+      # Only temporary. Change after laptop format.
+      {
+        condition = "gitdir:~/Documents/";
+        contents = {
+          user = {
+            name = "André Oliveira";
+            email = "andre.oliveira@q-better.com";
+          };
+        };
+      }
     ];
   };
 
@@ -95,6 +105,11 @@
         user = "ec2-user";
         hostname = "ec2-34-240-12-31.eu-west-1.compute.amazonaws.com";
         identityFile = "~/.ssh/aws_admin_rsa";
+      };
+      "qube-internal-tools" = {
+        user="qbetter";
+        hostname = "192.168.154.91";
+        identityFile = "~/.ssh/id_rsa";
       };
     };
   };
