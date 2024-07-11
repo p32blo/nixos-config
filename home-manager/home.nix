@@ -52,6 +52,7 @@
     extraOptions = ["--git" "--group" "--group-directories-first" "--header" "--sort=extension"];
   };
 
+  programs.bat.enable = true;
   programs.htop.enable = true;
   programs.ripgrep.enable = true;
   programs.fd.enable = true;
