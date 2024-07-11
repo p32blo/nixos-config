@@ -10,10 +10,14 @@
   home.packages = with pkgs; [
     gupnp-tools # SSDP CLI
     hyperfine
+    eza
+    ripgrep
+    alejandra
   ];
 
   programs.bash = {
     enable = true;
+    historyControl = ["ignoredups" "ignorespace"]; # change to "ignoreboth" on next Release
     shellAliases = let
       eza-sort-args = "--git --group --group-directories-first --header --sort=extension";
     in {
@@ -23,7 +27,14 @@
     };
   };
 
+  programs.lesspipe.enable = true;
+
   programs.fzf = {
+    enable = true;
+    enableBashIntegration = true;
+  };
+
+  programs.starship = {
     enable = true;
     enableBashIntegration = true;
   };
@@ -106,8 +117,8 @@
         hostname = "ec2-34-240-12-31.eu-west-1.compute.amazonaws.com";
         identityFile = "~/.ssh/aws_admin_rsa";
       };
-      "qube-internal-tools" = {
-        user="qbetter";
+      "qube-internal-tools-vpn" = {
+        user = "qbetter";
         hostname = "192.168.154.91";
         identityFile = "~/.ssh/id_rsa";
       };
@@ -116,4 +127,5 @@
 
   home.stateVersion = "24.05";
   programs.home-manager.enable = true;
+  home.enableNixpkgsReleaseCheck = false;
 }
