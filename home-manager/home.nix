@@ -8,21 +8,18 @@
   home.homeDirectory = "/home/andre";
 
   home.packages = with pkgs; [
+    rlwrap
+    file
+    mtr
+    alejandra
     gupnp-tools # SSDP CLI
     hyperfine
-    eza
-    ripgrep
-    alejandra
   ];
 
   programs.bash = {
     enable = true;
     historyControl = ["ignoredups" "ignorespace"]; # change to "ignoreboth" on next Release
-    shellAliases = let
-      eza-sort-args = "--git --group --group-directories-first --header --sort=extension";
-    in {
-      ll = "eza -l ${eza-sort-args}";
-      l = "eza -la ${eza-sort-args}";
+    shellAliases = {
       ws = "rg --files-with-matches '[^\n]\z'";
     };
   };
@@ -38,6 +35,25 @@
     enable = true;
     enableBashIntegration = true;
   };
+
+  programs.zellij = {
+    enable = true;
+    enableBashIntegration = true;
+    settings = {
+      default_layout = "compact";
+    };
+  };
+
+  programs.eza = {
+    enable = true;
+    enableBashIntegration = true;
+    extraOptions = ["--git" "--group" "--group-directories-first" "--header" "--sort=extension"];
+  };
+
+  programs.htop.enable = true;
+  programs.ripgrep.enable = true;
+  programs.fd.enable = true;
+  programs.jq.enable = true;
 
   home.file = {
     ".config/starship.toml" = {
