@@ -14,6 +14,7 @@
     alejandra
     gupnp-tools # SSDP CLI
     hyperfine
+    neofetch
   ];
 
   programs.bash = {
