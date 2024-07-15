@@ -16,9 +16,7 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
-    nixpkgs-unstable,
     home-manager,
     nixos-hardware,
     ...
@@ -34,10 +32,12 @@
 
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
 
-            home-manager.users.andre = import ./home-manager/home-gui.nix;
+              users.andre = import ./home-manager/home-gui.nix;
+            };
           }
         ];
       };
@@ -50,10 +50,12 @@
 
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
 
-            home-manager.users.andre = import ./home-manager/home.nix;
+              users.andre = import ./home-manager/home.nix;
+            };
           }
         ];
       };
@@ -65,10 +67,12 @@
 
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
 
-            home-manager.users.andre = import ./home-manager/home.nix;
+              users.andre = import ./home-manager/home.nix;
+            };
           }
         ];
       };

@@ -1,13 +1,13 @@
 {inputs, ...}: [
-  (final: prev: {
+  (final: _prev: {
     local = import ../pkgs {
       pkgs = final;
     };
   })
 
-  (final: prev: {
+  (final: _prev: {
     unstable = import inputs.nixpkgs-unstable {
-      system = final.system;
+      inherit (final) system;
       config.allowUnfree = true;
     };
   })
