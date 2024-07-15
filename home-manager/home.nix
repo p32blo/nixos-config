@@ -27,6 +27,13 @@
     };
   };
 
+  programs.vim = {
+    enable = true;
+    plugins = [
+      pkgs.vimPlugins.vim-gitgutter
+    ];
+  };
+
   programs.lesspipe.enable = true;
 
   programs.fzf = {
