@@ -15,6 +15,8 @@
     gupnp-tools # SSDP CLI
     hyperfine
     neofetch
+    deadnix
+    statix
   ];
 
   programs.bash = {
