@@ -35,6 +35,11 @@
     };
   };
 
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+  };
+
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.optimise.automatic = true;
 }
