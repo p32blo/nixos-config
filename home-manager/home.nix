@@ -29,8 +29,11 @@
 
   programs.vim = {
     enable = true;
-    plugins = [
-      pkgs.vimPlugins.vim-gitgutter
+    packageConfigurable = pkgs.vim;
+    plugins = with pkgs.vimPlugins; [
+      vim-sensible
+      vim-gitgutter
+      YankRing-vim
     ];
   };
 
