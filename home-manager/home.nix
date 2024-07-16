@@ -31,9 +31,10 @@
     enable = true;
     packageConfigurable = pkgs.vim;
     plugins = with pkgs.vimPlugins; [
-      vim-sensible
-      vim-gitgutter
-      YankRing-vim
+      sensible
+      gitgutter
+      yankring
+      airline
     ];
   };
 
