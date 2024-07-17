@@ -30,6 +30,7 @@
   programs.vim = {
     enable = true;
     packageConfigurable = pkgs.vim;
+    defaultEditor = true;
     plugins = with pkgs.vimPlugins; [
       sensible
       gitgutter
@@ -59,6 +60,7 @@
     enable = true;
     enableBashIntegration = true;
     settings = {
+      default_mode = "locked";
       default_layout = "compact";
       pane_frames = false;
       ui.pane_frames.rounded_corners = true;

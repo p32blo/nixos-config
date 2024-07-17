@@ -28,12 +28,9 @@
 
       alejandra
     ];
-
-    variables = {
-      EDITOR = "vim";
-      VISUAL = "vim";
-    };
   };
+
+  programs.vim.defaultEditor = true;
 
   programs.nh = {
     enable = true;
