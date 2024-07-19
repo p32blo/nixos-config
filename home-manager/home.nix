@@ -31,12 +31,17 @@
     enable = true;
     packageConfigurable = pkgs.vim;
     defaultEditor = true;
-    plugins = with pkgs.vimPlugins; [
-      sensible
-      gitgutter
-      yankring
-      airline
-    ];
+    plugins = let
+      yankring = pkgs.vimPlugins.YankRing-vim.overrideAttrs {
+        sourceRoot = "";
+      };
+    in
+      with pkgs.vimPlugins; [
+        vim-sensible
+        vim-gitgutter
+        vim-airline
+        yankring
+      ];
   };
 
   programs.lesspipe.enable = true;
