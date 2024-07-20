@@ -33,7 +33,7 @@
     defaultEditor = true;
     plugins = let
       yankring = pkgs.vimPlugins.YankRing-vim.overrideAttrs {
-        sourceRoot = "";
+        sourceRoot = null;
       };
     in
       with pkgs.vimPlugins; [
