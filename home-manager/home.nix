@@ -188,7 +188,4 @@
 
   home.stateVersion = "24.05";
   programs.home-manager.enable = true;
-
-  # Remove when home manager installs correctly on Ubuntu by default
-  home.enableNixpkgsReleaseCheck = false;
 }
