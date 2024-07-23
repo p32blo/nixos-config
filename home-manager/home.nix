@@ -12,12 +12,13 @@
     file
     mtr
     alejandra
-    gupnp-tools # SSDP CLI
+    # gupnp-tools # SSDP CLI (disabled - it brings gtk which is to heavy)
     hyperfine
     neofetch
     deadnix
     statix
     nh
+    nix-tree
   ];
 
   programs.bash = {
