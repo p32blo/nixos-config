@@ -25,6 +25,12 @@
   } @ inputs: let
     system = "x86_64-linux";
   in {
+    homeConfigurations = {
+      andre = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        modules = [./home-manager/home.nix];
+      };
+    };
     nixosConfigurations = {
       nixos-desktop = nixpkgs.lib.nixosSystem {
         inherit system;

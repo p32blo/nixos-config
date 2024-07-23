@@ -17,6 +17,7 @@
     neofetch
     deadnix
     statix
+    nh
   ];
 
   programs.bash = {
