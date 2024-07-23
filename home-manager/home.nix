@@ -28,6 +28,14 @@
     };
   };
 
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    nix-direnv = {
+      enable = true;
+    };
+  };
+
   programs.vim = {
     enable = true;
     packageConfigurable = pkgs.vim;
