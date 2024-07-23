@@ -30,6 +30,10 @@
         pkgs = nixpkgs.legacyPackages.${system};
         modules = [./home-manager/home.nix];
       };
+      "andre@rpi4" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages."aarch64-linux";
+        modules = [./home-manager/home.nix];
+      };
     };
     nixosConfigurations = {
       nixos-desktop = nixpkgs.lib.nixosSystem {
