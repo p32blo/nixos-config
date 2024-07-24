@@ -28,15 +28,17 @@
     homeConfigurations = {
       andre = home-manager.lib.homeManagerConfiguration {
         modules = [
-          ./home-manager/home.nix
+          ./home-manager/home-ubuntu.nix
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
-          {targets.genericLinux.enable = true;}
         ];
         pkgs = nixpkgs.legacyPackages.${system};
       };
       "andre@rpi4" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."aarch64-linux";
-        modules = [./home-manager/home.nix];
+        modules = [
+          ./home-manager/home.nix
+          {nixpkgs.overlays = import ./overlays {inherit inputs;};}
+        ];
       };
     };
     nixosConfigurations = {
