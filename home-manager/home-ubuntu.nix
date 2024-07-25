@@ -11,6 +11,14 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
+    thunderbird
+    spotify
+    discord
+
+    gimp
+    wireshark
+    vlc
+
     unstable.obsidian
     unstable.bruno
   ];

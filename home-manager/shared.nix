@@ -33,6 +33,9 @@
     enable = true;
     packageConfigurable = pkgs.vim;
     defaultEditor = true;
+    settings = {
+      mouse = "a";
+    };
     plugins = let
       yankring = pkgs.vimPlugins.YankRing-vim.overrideAttrs {
         sourceRoot = null;
@@ -85,6 +88,7 @@
   programs.ripgrep.enable = true;
   programs.fd.enable = true;
   programs.jq.enable = true;
+  programs.poetry.enable = true;
 
   home.file = {
     ".config/starship.toml" = {
