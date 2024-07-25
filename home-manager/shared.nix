@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     rlwrap
+    du-dust
     file
     mtr
     alejandra
