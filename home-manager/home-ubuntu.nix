@@ -21,6 +21,8 @@
 
     unstable.obsidian
     unstable.bruno
+
+    unstable.mqtt-explorer # Move to stable on next release
   ];
 
   home.file = {
