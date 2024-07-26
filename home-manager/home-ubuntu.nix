@@ -24,6 +24,9 @@
 
     unstable.mqtt-explorer # Move to stable on next release
     ungoogled-chromium
+
+    # A temp fix for a crash when opening Downloads
+    gnome.nautilus
   ];
 
   home.file = {
