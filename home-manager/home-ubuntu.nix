@@ -23,6 +23,7 @@
     unstable.bruno
 
     unstable.mqtt-explorer # Move to stable on next release
+    ungoogled-chromium
   ];
 
   home.file = {
