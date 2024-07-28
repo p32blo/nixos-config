@@ -16,9 +16,9 @@
       rsync
 
       eza
-      bat
-      du-dust
-      dua
+      #bat
+      #du-dust
+      #dua
       ripgrep
       fd
       zellij
@@ -28,17 +28,13 @@
       jq
 
       alejandra
+      unstable.nh
     ];
   };
 
   console.font = "Lat2-Terminus16";
 
   programs.vim.defaultEditor = true;
-
-  programs.nh = {
-    enable = true;
-    clean.enable = true;
-  };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.optimise.automatic = true;
