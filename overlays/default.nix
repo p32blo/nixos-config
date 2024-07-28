@@ -7,7 +7,7 @@
 
   (final: prev: {
     unstable = import inputs.nixpkgs-unstable {
-      system = final.system;
+      system = prev.system;
       config.allowUnfree = true;
     };
   })
