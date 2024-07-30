@@ -13,6 +13,7 @@
       git
       file
       rlwrap
+      rsync
 
       eza
       bat
@@ -29,6 +30,8 @@
       alejandra
     ];
   };
+
+  console.font = "Lat2-Terminus16";
 
   programs.vim.defaultEditor = true;
 
