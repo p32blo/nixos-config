@@ -66,10 +66,10 @@
       };
       rpi4 = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
+        specialArgs = {inherit inputs;};
         modules = [
           ./hosts/rpi4/configuration.nix
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
-          nixos-hardware.nixosModules.raspberry-pi-4
 
           home-manager.nixosModules.home-manager
           {
