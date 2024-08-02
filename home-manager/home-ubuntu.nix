@@ -15,7 +15,7 @@
     spotify
     discord
 
-    gimp
+    gimp-with-plugins
     wireshark
     vlc
 
