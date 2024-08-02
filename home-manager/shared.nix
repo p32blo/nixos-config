@@ -12,6 +12,7 @@
     statix
     nh
     nix-tree
+    nixd
   ];
 
   programs.bash = {
@@ -30,13 +31,25 @@
     };
   };
 
-  programs.vim = {
+  programs.neovim = {
     enable = true;
-    packageConfigurable = pkgs.vim;
     defaultEditor = true;
-    settings = {
-      mouse = "a";
+    viAlias = true;
+    extraConfig = ''
+      set mouse = "a";
+    '';
+    coc = {
+      enable = true;
+      settings = {
+        languageserver = {
+          nix = {
+            command = "nixd";
+            filetypes = ["nix"];
+          };
+        };
+      };
     };
+
     plugins = let
       yankring = pkgs.vimPlugins.YankRing-vim.overrideAttrs {
         sourceRoot = null;
