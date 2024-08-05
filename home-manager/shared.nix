@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     rlwrap
     du-dust
+    rsync
     file
     mtr
     alejandra
@@ -103,7 +104,6 @@
   programs.ripgrep.enable = true;
   programs.fd.enable = true;
   programs.jq.enable = true;
-  programs.poetry.enable = true;
 
   home.file = {
     ".config/starship.toml" = {
@@ -194,6 +194,11 @@
         user = "qbetter";
         hostname = "192.168.154.91";
         identityFile = "~/.ssh/id_rsa";
+      };
+      "qube-dev" = {
+        user = "ec2-user";
+        hostname = "52.18.49.5";
+        identityFile = "~/.ssh/qube-dev.pem";
       };
     };
   };

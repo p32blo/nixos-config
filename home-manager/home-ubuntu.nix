@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./shared.nix
+    ./python.nix
     # ./gui.nix # Use when all packages are proven to work
   ];
   nixpkgs.config.allowUnfree = true;
@@ -18,6 +19,8 @@
     gimp-with-plugins
     wireshark
     vlc
+    blender
+    rpi-imager
 
     unstable.obsidian
     unstable.bruno
