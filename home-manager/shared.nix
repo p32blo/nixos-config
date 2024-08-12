@@ -175,11 +175,6 @@
         user = "qbetter";
         hostname = "192.168.154.184";
       };
-      "qube-ssh" = {
-        user = "ec2-user";
-        hostname = "ssh.myqube.io"; # this will be changed soon to ssh.qube.q-better.com
-        identityFile = "~/.ssh/aws_admin_rsa";
-      };
       "qube-dev-aux" = {
         user = "ubuntu";
         hostname = "ec2-3-248-205-52.eu-west-1.compute.amazonaws.com";
@@ -199,6 +194,16 @@
         user = "ec2-user";
         hostname = "52.18.49.5";
         identityFile = "~/.ssh/qube-dev.pem";
+      };
+      "qube-prod-jump" = {
+        user = "ec2-user";
+        hostname = "18.203.87.64";
+        identityFile = "~/.ssh/qube-prod.pem";
+      };
+      "qube-ssh" = {
+        user = "sshtunnel";
+        hostname = "ssh.qube.q-better.com";
+        port = 1022;
       };
     };
   };

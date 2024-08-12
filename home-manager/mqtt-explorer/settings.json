@@ -51,7 +51,7 @@
       "certValidation": false,
       "clientId": "mqtt-explorer-298d7c77",
       "encryption": true,
-      "host": "mqtt.myqube.io",
+      "host": "mqtt.qube.q-better.com",
       "id": "c858a110-f753-46e0-a11e-080ca2ca9863",
       "name": "Qube PROD",
       "port": "8883",
