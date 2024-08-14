@@ -4,6 +4,9 @@
     isort
     yapf
 
+    # Qube player
+    mpg123
+
     # Qube UI Projects
     nodejs_22
   ];
