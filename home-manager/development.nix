@@ -9,6 +9,9 @@
 
     # Qube UI Projects
     nodejs_22
+
+    # Docker
+    dive
   ];
 
   # Python Dev
