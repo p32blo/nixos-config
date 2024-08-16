@@ -66,5 +66,10 @@ in {
   #   distrobox
   # ];
 
+  environment.systemPackages = with pkgs; [
+    libraspberrypi
+    raspberrypi-eeprom
+  ];
+
   system.stateVersion = "24.05";
 }
