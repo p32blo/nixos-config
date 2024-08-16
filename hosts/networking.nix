@@ -23,6 +23,9 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  # Advertise device on the local network with mDNS
+  services.avahi.enable = true;
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
