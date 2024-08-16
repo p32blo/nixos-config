@@ -36,7 +36,7 @@
       "andre@rpi4" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."aarch64-linux";
         modules = [
-          ./home-manager/home.nix
+          ./home-manager/rpi4/home.nix
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
         ];
       };
@@ -76,7 +76,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.andre = import ./home-manager/home.nix;
+            home-manager.users.andre = import ./home-manager/rpi4/home.nix;
           }
         ];
       };
