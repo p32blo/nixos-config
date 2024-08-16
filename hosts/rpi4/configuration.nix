@@ -32,7 +32,13 @@ in {
       xterm.enable = false;
       xfce.enable = true;
     };
-    displayManager.defaultSession = "xfce";
+  };
+  services.displayManager.defaultSession = "xfce";
+
+  services.xrdp = {
+    enable = true;
+    defaultWindowManager = "xfce4-session";
+    openFirewall = true;
   };
 
   security.rtkit.enable = true;
