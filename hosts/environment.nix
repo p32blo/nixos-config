@@ -31,6 +31,9 @@
     ];
   };
 
+  fonts.packages = with pkgs; [
+    corefonts
+  ];
   console.font = "Lat2-Terminus16";
 
   programs.vim.defaultEditor = true;
@@ -40,6 +43,7 @@
     clean.enable = true;
   };
 
+  nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.optimise.automatic = true;
 }
