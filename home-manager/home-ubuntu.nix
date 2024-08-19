@@ -30,6 +30,10 @@
 
     # A temp fix for a crash when opening Downloads
     gnome.nautilus
+    gnome.eog
+    gnome.file-roller
+
+    remmina
   ];
 
   home.file = {
