@@ -24,6 +24,11 @@
       fsType = "ext4";
       options = ["noatime"];
     };
+    "/boot/rpi" = {
+      device = "/dev/disk/by-label/FIRMWARE";
+      fsType = "FAT16";
+      options = ["noatime"];
+    };
   };
 
   swapDevices = [
