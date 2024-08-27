@@ -195,6 +195,16 @@
         hostname = "52.18.49.5";
         identityFile = "~/.ssh/qube-dev.pem";
       };
+      "qube-test" = {
+        user = "ec2-user";
+        hostname = "18.202.143.241";
+        identityFile = "~/.ssh/qube-test.pem";
+      };
+      "qube-prod" = {
+        user = "ec2-user";
+        hostname = "54.170.87.16";
+        identityFile = "~/.ssh/qube-prod.pem";
+      };
       "qube-prod-jump" = {
         user = "ec2-user";
         hostname = "18.203.87.64";
