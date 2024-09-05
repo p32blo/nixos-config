@@ -26,7 +26,7 @@
     };
     "/boot/rpi" = {
       device = "/dev/disk/by-label/FIRMWARE";
-      fsType = "FAT16";
+      fsType = "vfat";
       options = ["noatime"];
     };
   };
