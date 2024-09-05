@@ -32,6 +32,8 @@
     gnome.nautilus
     gnome.eog
     gnome.file-roller
+    gnome.gnome-terminal
+    papers
 
     remmina
   ];
