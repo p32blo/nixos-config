@@ -21,7 +21,10 @@
   # };
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings.X11Forwarding = true;
+  };
 
   # Advertise device on the local network with mDNS
   services.avahi = {
