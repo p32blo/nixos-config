@@ -17,6 +17,8 @@ in {
 
   networking.hostName = hostname;
 
+  time.timeZone = lib.mkForce null;
+
   users = {
     mutableUsers = false;
     users."${user}" = {
