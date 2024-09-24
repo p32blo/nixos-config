@@ -31,6 +31,9 @@
     shellAliases = {
       ws = "rg --files-with-matches '[^\n]\z'";
     };
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+    '';
   };
 
   programs.direnv = {
