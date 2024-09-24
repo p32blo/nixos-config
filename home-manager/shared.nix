@@ -22,11 +22,21 @@
     shellAliases = {
       ws = "rg --files-with-matches '[^\n]\z'";
     };
+    bashrcExtra = ''
+      export PATH=$PATH:/nix/var/nix/profiles/default/bin/
+    '';
+  };
+
+  programs.fish = {
+    enable = true;
+    shellAliases = {
+      ws = "rg --files-with-matches '[^\n]\z'";
+    };
   };
 
   programs.direnv = {
     enable = true;
-    enableBashIntegration = true;
+    #enableFishIntegration = true;
     nix-direnv = {
       enable = true;
     };
@@ -68,33 +78,34 @@
 
   programs.fzf = {
     enable = true;
-    enableBashIntegration = true;
+    enableFishIntegration = true;
   };
 
   programs.zoxide = {
     enable = true;
-    enableBashIntegration = true;
+    enableFishIntegration = true;
   };
 
   programs.starship = {
     enable = true;
-    enableBashIntegration = true;
+    enableFishIntegration = true;
   };
 
   programs.zellij = {
     enable = true;
-    enableBashIntegration = true;
+    enableFishIntegration = true;
     settings = {
       default_mode = "locked";
       default_layout = "compact";
       pane_frames = false;
       ui.pane_frames.rounded_corners = true;
+      default_shell = "fish";
     };
   };
 
   programs.eza = {
     enable = true;
-    enableBashIntegration = true;
+    enableFishIntegration = true;
     extraOptions = ["--git" "--group" "--group-directories-first" "--header" "--sort=extension"];
   };
 
