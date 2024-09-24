@@ -43,6 +43,9 @@
       source = ./mqtt-explorer/settings.json;
       force = true;
     };
+    ".icons/default" = {
+      source = "${pkgs.vanilla-dmz}/share/icons/Vanilla-DMZ";
+    };
   };
 
   home.username = "andre";
