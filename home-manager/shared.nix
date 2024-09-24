@@ -13,7 +13,6 @@
     statix
     nh
     nix-tree
-    nixd
   ];
 
   programs.bash = {
@@ -47,7 +46,8 @@
     defaultEditor = true;
     viAlias = true;
     extraConfig = ''
-      set mouse = "a";
+      set mouse=a
+      set number
     '';
     coc = {
       enable = true;
@@ -56,6 +56,10 @@
           nix = {
             command = "nixd";
             filetypes = ["nix"];
+          };
+          python = {
+            command = "pylsp";
+            filetypes = ["python"];
           };
         };
       };
@@ -71,7 +75,17 @@
         vim-gitgutter
         vim-airline
         yankring
+        telescope-nvim
+        coc-python
+        undotree
+        harpoon
+        nvim-treesitter.withAllGrammars
       ];
+
+    extraPackages = with pkgs; [
+      nixd
+      python312Packages.python-lsp-server
+    ];
   };
 
   programs.lesspipe.enable = true;
