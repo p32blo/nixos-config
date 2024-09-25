@@ -52,6 +52,15 @@
       set mouse=a
       set number
     '';
+    extraLuaConfig = ''
+      vim.g.mapleader = ' '
+
+      vim.api.nvim_set_keymap('n', 'ç', ':', { noremap = true, silent = false })
+      vim.api.nvim_set_keymap('v', 'ç', ':', { noremap = true, silent = false })
+
+      vim.api.nvim_set_keymap('n', '<leader>o', 'o<esc>', { noremap = true, silent = false })
+      vim.api.nvim_set_keymap('n', '<leader>O', 'O<esc>', { noremap = true, silent = false })
+    '';
     coc = {
       enable = true;
       settings = {
