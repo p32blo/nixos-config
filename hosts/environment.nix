@@ -38,6 +38,8 @@
 
   programs.vim.defaultEditor = true;
 
+  programs.fish.enable = true;
+
   programs.nh = {
     enable = true;
   };
