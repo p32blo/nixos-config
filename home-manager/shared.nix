@@ -60,6 +60,8 @@
 
       vim.api.nvim_set_keymap('n', '<leader>o', 'o<esc>', { noremap = true, silent = false })
       vim.api.nvim_set_keymap('n', '<leader>O', 'O<esc>', { noremap = true, silent = false })
+
+      vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = false })
     '';
     coc = {
       enable = true;
