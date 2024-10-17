@@ -143,6 +143,7 @@
   programs.ripgrep.enable = true;
   programs.fd.enable = true;
   programs.jq.enable = true;
+  programs.lazygit.enable = true;
 
   home.file = {
     ".config/starship.toml" = {
