@@ -152,6 +152,7 @@
     };
   };
 
+  programs.jujutsu.enable = true;
   programs.git = {
     enable = true;
     userName = "André Oliveira";
