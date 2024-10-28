@@ -3,6 +3,7 @@
     # Python Dev
     isort
     yapf
+    ruff
 
     # Qube player
     mpg123

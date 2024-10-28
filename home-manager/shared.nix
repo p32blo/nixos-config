@@ -75,6 +75,10 @@
             command = "pylsp";
             filetypes = ["python"];
           };
+          go = {
+            command = "gopls";
+            filetypes = ["go" "gomod"];
+          };
         };
       };
     };
@@ -99,6 +103,7 @@
     extraPackages = with pkgs; [
       nixd
       python312Packages.python-lsp-server
+      gopls
     ];
   };
 
@@ -152,7 +157,11 @@
     };
   };
 
-  programs.jujutsu.enable = true;
+  programs.jujutsu = {
+    enable = true;
+    package = pkgs.unstable.jujutsu;
+  };
+
   programs.git = {
     enable = true;
     userName = "André Oliveira";
