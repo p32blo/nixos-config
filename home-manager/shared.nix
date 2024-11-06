@@ -49,7 +49,31 @@
     extraPackages = with pkgs; [
       nil
       gopls
+      golangci-lint-langserver
     ];
+    languages = {
+      language = [
+        {
+          name = "templ";
+          language-servers = ["templ" "tailwindcss-ls"];
+          auto-format = true;
+        }
+        {
+          name = "nix";
+          language-servers = ["nixd"];
+          formatter = {
+            command = "alejandra";
+            args = ["-"];
+          };
+          auto-format = true;
+        }
+        {
+          name = "go";
+          auto-format = true;
+        }
+      ];
+      language-server.nixd.command = "nixd";
+    };
   };
 
   programs.neovim = {
