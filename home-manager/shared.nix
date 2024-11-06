@@ -47,7 +47,7 @@
   programs.helix = {
     enable = true;
     extraPackages = with pkgs; [
-      nixd
+      nil
       gopls
     ];
   };
