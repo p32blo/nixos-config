@@ -44,6 +44,14 @@
     };
   };
 
+  programs.helix = {
+    enable = true;
+    extraPackages = with pkgs; [
+      nixd
+      gopls
+    ];
+  };
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -216,6 +224,12 @@
     enable = true;
     matchBlocks = {
       "qube*.local" = {
+        user = "qube";
+        extraOptions = {
+          StrictHostKeyChecking = "no";
+        };
+      };
+      "qubeplayer.local" = {
         user = "qube";
         extraOptions = {
           StrictHostKeyChecking = "no";
