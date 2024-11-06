@@ -54,6 +54,8 @@ in {
     jack.enable = true;
   };
 
+  services.gitea.enable = true;
+
   # virtualisation.containers.enable = true;
   # virtualisation = {
   #   podman = {
