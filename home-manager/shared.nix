@@ -47,7 +47,7 @@
   programs.helix = {
     enable = true;
     extraPackages = with pkgs; [
-      nil
+      nixd
       gopls
       golangci-lint-langserver
     ];
@@ -158,6 +158,7 @@
 
   programs.zellij = {
     enable = true;
+    package = pkgs.unstable.zellij;
     enableFishIntegration = true;
     settings = {
       default_mode = "locked";
