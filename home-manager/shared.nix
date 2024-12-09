@@ -126,7 +126,6 @@
         vim-airline
         yankring
         telescope-nvim
-        coc-python
         undotree
         harpoon
         nvim-treesitter.withAllGrammars

@@ -25,6 +25,7 @@ in
 
     meta = with lib; {
       description = "A comprehensive and easy-to-use MQTT Client";
+      deprecated = true;
       homepage = "https://mqtt-explorer.com/";
       license =
         # TODO: make licenses.cc-by-nd-40

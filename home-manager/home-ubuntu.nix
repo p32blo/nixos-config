@@ -25,18 +25,25 @@
     unstable.obsidian
     unstable.bruno
 
-    unstable.mqtt-explorer # Move to stable on next release
+    mqtt-explorer
     ungoogled-chromium
 
     # A temp fix for a crash when opening Downloads
-    gnome.nautilus
-    gnome.eog
-    gnome.file-roller
-    gnome.gnome-terminal
+    nautilus
+    # nautilus-open-any-terminal
+    eog
+    file-roller
+    gnome-terminal
     papers
 
     remmina
   ];
+
+  # dconf.settings = {
+  #   "com/github/stunkymonkey/nautilus-open-any-terminal" = {
+  #     terminal = "gnome-terminal";
+  #   };
+  # };
 
   home.file = {
     ".config/MQTT-Explorer/settings.json" = {

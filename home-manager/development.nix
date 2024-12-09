@@ -13,6 +13,9 @@
 
     # Docker
     dive
+
+    # Go
+    gopls
   ];
 
   # Python Dev
