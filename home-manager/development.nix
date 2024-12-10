@@ -16,6 +16,9 @@
 
     # Go
     gopls
+
+    # Nix
+    nixd
   ];
 
   # Python Dev

@@ -47,8 +47,6 @@
   programs.helix = {
     enable = true;
     extraPackages = with pkgs; [
-      nixd
-      gopls
       golangci-lint-langserver
     ];
     languages = {
@@ -132,9 +130,7 @@
       ];
 
     extraPackages = with pkgs; [
-      nixd
       python312Packages.python-lsp-server
-      gopls
     ];
   };
 
