@@ -13,11 +13,17 @@
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
     };
+
+    nixgl = {
+      url = "github:nix-community/nixGL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     nixpkgs,
     home-manager,
+    nixgl,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -25,6 +31,9 @@
     homeConfigurations = {
       andre = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
+        extraSpecialArgs = {
+          inherit nixgl;
+        };
         modules = [
           ./home-manager/home-ubuntu.nix
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}

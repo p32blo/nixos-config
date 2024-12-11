@@ -1,7 +1,7 @@
 {
   config,
   pkgs,
-  lib,
+  nixgl,
   ...
 }: {
   imports = [
@@ -11,6 +11,11 @@
   ];
   nixpkgs.config.allowUnfree = true;
 
+  nixGL.packages = nixgl.packages;
+  nixGL.defaultWrapper = "mesa";
+  nixGL.offloadWrapper = "nvidiaPrime";
+  nixGL.installScripts = ["mesa" "nvidiaPrime"];
+
   home.packages = with pkgs; [
     thunderbird
     spotify
@@ -19,8 +24,8 @@
     gimp-with-plugins
     wireshark
     vlc
-    blender
-    rpi-imager
+    (config.lib.nixGL.wrap blender)
+    (config.lib.nixGL.wrap rpi-imager)
 
     unstable.obsidian
     unstable.bruno
