@@ -17,6 +17,8 @@
   nixGL.installScripts = ["mesa" "nvidiaPrime"];
 
   home.packages = with pkgs; [
+    lazydocker
+
     thunderbird
     spotify
     discord

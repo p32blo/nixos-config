@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     rlwrap
     du-dust
+    duf
     rsync
     file
     mtr
