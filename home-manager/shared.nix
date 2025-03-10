@@ -103,7 +103,7 @@
             filetypes = ["nix"];
           };
           python = {
-            command = "pylsp";
+            command = "pyright";
             filetypes = ["python"];
           };
           go = {
@@ -128,10 +128,17 @@
         undotree
         harpoon
         nvim-treesitter.withAllGrammars
+        vim-dadbod
+        vim-dadbod-ui
+        nvim-treesitter-parsers.templ
       ];
 
     extraPackages = with pkgs; [
-      python312Packages.python-lsp-server
+      nixd
+      pyright
+      python311Packages.pylint
+      python311Packages.pylint-django
+      gopls
     ];
   };
 

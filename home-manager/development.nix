@@ -4,6 +4,7 @@
     isort
     yapf
     ruff
+    #pipenv
 
     # Qube player
     mpg123
@@ -23,6 +24,7 @@
 
   # Python Dev
   programs.poetry.enable = true;
+  programs.pyenv.enable = true;
 
   # Obsidian export plugin
   programs.pandoc.enable = true;
