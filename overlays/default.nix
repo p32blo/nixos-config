@@ -11,4 +11,11 @@
       config.allowUnfree = true;
     };
   })
+
+  (final: prev: {
+    unstable-vlc4 = import inputs.nixpkgs-vlc4 {
+      system = final.system;
+      config.allowUnfree = true;
+    };
+  })
 ]

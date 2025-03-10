@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    nixpkgs-vlc4.url = "nixpkgs/fa48cc4e95901459c1eb5b8e31387897ddceee5d";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";

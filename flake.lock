@@ -103,13 +103,29 @@
         "type": "indirect"
       }
     },
+    "nixpkgs-vlc4": {
+      "locked": {
+        "lastModified": 1735476742,
+        "narHash": "sha256-HvMFruqOb65HDDagABMdhKrisurjgspBt1ef4+Wx+U4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "fa48cc4e95901459c1eb5b8e31387897ddceee5d",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "rev": "fa48cc4e95901459c1eb5b8e31387897ddceee5d",
+        "type": "indirect"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixgl": "nixgl",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "nixpkgs-vlc4": "nixpkgs-vlc4"
       }
     }
   },

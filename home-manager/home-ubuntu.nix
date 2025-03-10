@@ -3,7 +3,20 @@
   pkgs,
   nixgl,
   ...
-}: {
+}: let
+  vlc4 = pkgs.unstable-vlc4.vlc4.overrideAttrs (
+    oldAttrs: {
+      waylandSupport = false;
+      src = pkgs.fetchFromGitLab {
+        owner = "videolan";
+        repo = "vlc";
+        rev = "master";
+        domain = "code.videolan.org";
+        hash = "sha256-XrAz4ywVelu4X4GfZhiszvxPyXL+xN2GbkL3JclHYWM=";
+      };
+    }
+  );
+in {
   imports = [
     ./shared.nix
     ./development.nix
@@ -25,7 +38,8 @@
 
     gimp-with-plugins
     wireshark
-    vlc
+    #    vlc
+    (config.lib.nixGL.wrap vlc4)
     (config.lib.nixGL.wrap blender)
     (config.lib.nixGL.wrap rpi-imager)
 
