@@ -46,6 +46,13 @@
     remmina
   ];
 
+  programs = {
+    alacritty = {
+      enable = true;
+      package = config.lib.nixGL.wrap pkgs.alacritty;
+    };
+  };
+
   # dconf.settings = {
   #   "com/github/stunkymonkey/nautilus-open-any-terminal" = {
   #     terminal = "gnome-terminal";
