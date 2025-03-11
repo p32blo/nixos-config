@@ -14,6 +14,7 @@
     statix
     nh
     nix-tree
+    nixd
   ];
 
   programs.bash = {
@@ -50,6 +51,11 @@
     extraPackages = with pkgs; [
       golangci-lint-langserver
     ];
+    settings = {
+      editor = {
+        lsp.display-inlay-hints = true;
+      };
+    };
     languages = {
       language = [
         {

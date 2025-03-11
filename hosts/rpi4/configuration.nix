@@ -16,7 +16,7 @@ in {
   ];
 
   networking.hostName = hostname;
-  
+
   nix.settings.trusted-users = ["root" "andre"];
 
   time.timeZone = lib.mkForce null;
