@@ -6,8 +6,6 @@
 }: {
   environment = {
     systemPackages = with pkgs; [
-      vim
-
       wget
       curl
       git
@@ -36,7 +34,10 @@
   ];
   console.font = "Lat2-Terminus16";
 
-  programs.vim.defaultEditor = true;
+  programs.vim = {
+    enable = true;
+    defaultEditor = true;
+  };
 
   programs.fish.enable = true;
 

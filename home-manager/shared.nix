@@ -48,6 +48,7 @@
 
   programs.helix = {
     enable = true;
+    defaultEditor = true;
     extraPackages = with pkgs; [
       golangci-lint-langserver
     ];
@@ -83,7 +84,6 @@
 
   programs.neovim = {
     enable = true;
-    defaultEditor = true;
     viAlias = true;
     extraConfig = ''
       set mouse=a
@@ -161,6 +161,11 @@
   };
 
   programs.starship = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
+  programs.yazi = {
     enable = true;
     enableFishIntegration = true;
   };
