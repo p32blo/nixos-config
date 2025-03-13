@@ -120,6 +120,7 @@
       };
     };
 
+    # TODO: Remove override after PR #389256 goes to unstable
     plugins = let
       yankring = pkgs.vimPlugins.YankRing-vim.overrideAttrs {
         sourceRoot = null;
@@ -237,16 +238,7 @@
       };
     };
     includes = [
-      {
-        condition = "gitdir:~/Work/";
-        contents = {
-          user = {
-            name = "André Oliveira";
-            email = "andre.oliveira@q-better.com";
-          };
-        };
-      }
-      # Only temporary. Change after laptop format.
+      # Only temporary. Change to `Work/` after laptop format.
       {
         condition = "gitdir:~/Documents/";
         contents = {
