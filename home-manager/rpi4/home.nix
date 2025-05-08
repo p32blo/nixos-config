@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ../shared.nix
   ];
@@ -12,7 +7,7 @@
   home.homeDirectory = "/home/andre";
 
   home.packages = with pkgs; [
-    ungoogled-chromium
+    librewolf
     alacritty
     devenv
   ];

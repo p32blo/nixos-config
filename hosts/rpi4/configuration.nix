@@ -57,6 +57,7 @@ in {
   };
 
   services.gitea.enable = true;
+  programs.mosh.enable = true;
 
   # virtualisation.containers.enable = true;
   # virtualisation = {
