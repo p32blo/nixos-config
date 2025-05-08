@@ -29,7 +29,7 @@
     system = "x86_64-linux";
   in {
     homeConfigurations = {
-      andre = home-manager.lib.homeManagerConfiguration {
+      p32blo = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
         extraSpecialArgs = {
           inherit nixgl;

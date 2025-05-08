@@ -6,7 +6,7 @@
 }: {
   imports = [
     ./shared.nix
-    ./development.nix
+    # ./development.nix
     # ./gui.nix # Use when all packages are proven to work
   ];
   nixpkgs.config.allowUnfree = true;
@@ -19,31 +19,25 @@
   home.packages = with pkgs; [
     lazydocker
 
-    thunderbird
-    spotify
-    discord
+    noto-fonts-emoji
+    fira-code-nerdfont
 
-    gimp-with-plugins
-    wireshark
-    vlc
-    (config.lib.nixGL.wrap blender)
-    (config.lib.nixGL.wrap rpi-imager)
+    # unstable.obsidian
+    # librewolf
 
-    unstable.obsidian
-    unstable.bruno
+    # spotify
+    # discord
 
-    mqtt-explorer
-    ungoogled-chromium
+    # gimp-with-plugins
+    # wireshark
+    # vlc
+    # (config.lib.nixGL.wrap blender)
+    # (config.lib.nixGL.wrap rpi-imager)
 
-    # A temp fix for a crash when opening Downloads
-    nautilus
-    # nautilus-open-any-terminal
-    eog
-    file-roller
-    gnome-terminal
-    papers
+    # unstable.bruno
+    # mqtt-explorer
 
-    remmina
+    # remmina
   ];
 
   programs = {
@@ -59,18 +53,18 @@
   #   };
   # };
 
-  home.file = {
-    ".config/MQTT-Explorer/settings.json" = {
-      source = ./mqtt-explorer/settings.json;
-      force = true;
-    };
-    ".icons/default" = {
-      source = "${pkgs.vanilla-dmz}/share/icons/Vanilla-DMZ";
-    };
-  };
+  #  home.file = {
+  #    ".config/MQTT-Explorer/settings.json" = {
+  #      source = ./mqtt-explorer/settings.json;
+  #      force = true;
+  #    };
+  #    ".icons/default" = {
+  #      source = "${pkgs.vanilla-dmz}/share/icons/Vanilla-DMZ";
+  #    };
+  #  };
 
-  home.username = "andre";
-  home.homeDirectory = "/home/andre";
+  home.username = "p32blo";
+  home.homeDirectory = "/home/p32blo";
 
   home.stateVersion = "24.05";
   programs.home-manager.enable = true;

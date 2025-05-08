@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  fonts.fontconfig.enable = true;
+
   home.packages = with pkgs; [
     rlwrap
     du-dust
@@ -26,6 +28,7 @@
     bashrcExtra = ''
       export PATH=$PATH:/nix/var/nix/profiles/default/bin/
     '';
+    enableCompletion = false;
   };
 
   programs.fish = {
@@ -169,6 +172,11 @@
   programs.yazi = {
     enable = true;
     enableFishIntegration = true;
+    package = pkgs.yazi.override {
+      extraPackages = [
+        pkgs.ueberzugpp
+      ];
+    };
   };
 
   programs.zellij = {
