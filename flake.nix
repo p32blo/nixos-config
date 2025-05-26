@@ -46,10 +46,13 @@
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
         ];
       };
-      "andre@nixos" = home-manager.lib.homeManagerConfiguration {
+      andre = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
+        extraSpecialArgs = {
+          inherit nixgl;
+        };
         modules = [
-          ./home-manager/home.nix
+          ./home-manager/ubuntu/home.nix
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
         ];
       };
