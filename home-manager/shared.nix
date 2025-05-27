@@ -137,7 +137,6 @@
         telescope-nvim
         undotree
         harpoon
-        nvim-treesitter.withAllGrammars
         vim-dadbod
         vim-dadbod-ui
         nvim-treesitter-parsers.templ
