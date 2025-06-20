@@ -38,6 +38,8 @@
     };
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
+      source "$HOME/.cargo/env.fish"
+      eval "$(/opt/homebrew/bin/brew shellenv)"
     '';
   };
 

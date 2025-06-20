@@ -5,7 +5,7 @@
 }: {
   imports = [
     ../shared.nix
-    # ./development.nix
+    ../development.nix
     # ./gui.nix # Use when all packages are proven to work
   ];
   nixpkgs.config.allowUnfree = true;
