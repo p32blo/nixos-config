@@ -27,6 +27,7 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
+    system-darwin = "aarch64-darwin";
   in {
     homeConfigurations = {
       p32blo = home-manager.lib.homeManagerConfiguration {
@@ -46,13 +47,23 @@
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
         ];
       };
-      andre = home-manager.lib.homeManagerConfiguration {
+      "andre@janine" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
         extraSpecialArgs = {
           inherit nixgl;
         };
         modules = [
           ./home-manager/ubuntu/home.nix
+          {nixpkgs.overlays = import ./overlays {inherit inputs;};}
+        ];
+      };
+      "andre@air" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system-darwin};
+        extraSpecialArgs = {
+          inherit nixgl;
+        };
+        modules = [
+          ./home-manager/air/home.nix
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
         ];
       };

@@ -245,78 +245,15 @@
       };
     };
     includes = [
-      # Only temporary. Change to `Work/` after laptop format.
       {
-        condition = "gitdir:~/Documents/";
+        condition = "gitdir:~/Work/";
         contents = {
           user = {
             name = "André Oliveira";
-            email = "andre.oliveira@q-better.com";
+            email = "andre@green-got.com";
           };
         };
       }
     ];
-  };
-
-  programs.ssh = {
-    enable = true;
-    matchBlocks = {
-      "qube*.local" = {
-        user = "qube";
-        extraOptions = {
-          StrictHostKeyChecking = "no";
-        };
-      };
-      "qubeplayer.local" = {
-        user = "qube";
-        extraOptions = {
-          StrictHostKeyChecking = "no";
-        };
-      };
-      "qube-gh-action-vpn" = {
-        user = "qbetter";
-        hostname = "192.168.154.184";
-      };
-      "qube-dev-aux" = {
-        user = "ubuntu";
-        hostname = "ec2-3-248-205-52.eu-west-1.compute.amazonaws.com";
-        identityFile = "~/.ssh/aws_rsa";
-      };
-      "qube-preview" = {
-        user = "ec2-user";
-        hostname = "ec2-34-240-12-31.eu-west-1.compute.amazonaws.com";
-        identityFile = "~/.ssh/aws_admin_rsa";
-      };
-      "qube-internal-tools-vpn" = {
-        user = "qbetter";
-        hostname = "192.168.154.91";
-        identityFile = "~/.ssh/id_rsa";
-      };
-      "qube-dev" = {
-        user = "ec2-user";
-        hostname = "52.18.49.5";
-        identityFile = "~/.ssh/qube-dev.pem";
-      };
-      "qube-test" = {
-        user = "ec2-user";
-        hostname = "18.202.143.241";
-        identityFile = "~/.ssh/qube-test.pem";
-      };
-      "qube-prod" = {
-        user = "ec2-user";
-        hostname = "54.170.87.16";
-        identityFile = "~/.ssh/qube-prod.pem";
-      };
-      "qube-prod-jump" = {
-        user = "ec2-user";
-        hostname = "18.203.87.64";
-        identityFile = "~/.ssh/qube-prod.pem";
-      };
-      "qube-ssh" = {
-        user = "sshtunnel";
-        hostname = "ssh.qube.q-better.com";
-        port = 1022;
-      };
-    };
   };
 }
