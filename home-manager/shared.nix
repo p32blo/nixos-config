@@ -186,7 +186,7 @@
     enableFishIntegration = true;
     settings = {
       default_mode = "locked";
-      default_layout = "compact";
+      default_layout = "default"; # change to "compact" later
       pane_frames = false;
       ui.pane_frames.rounded_corners = true;
       default_shell = "fish";
