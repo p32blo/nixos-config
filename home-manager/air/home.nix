@@ -11,11 +11,13 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    lazydocker
+    # fonts
     noto-fonts-emoji
     fira-code-nerdfont
 
+    # Apps
     unstable.obsidian
+    blender
   ];
 
   programs = {
