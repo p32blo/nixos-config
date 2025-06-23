@@ -20,10 +20,24 @@
     blender
   ];
 
-  programs = {
-    alacritty = {
-      enable = true;
-      package = pkgs.alacritty;
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      font = {
+        normal = {
+          family = "FiraCode Nerd Font";
+          style = "Regular";
+        };
+        bold = {
+          family = "FiraCode Nerd Font";
+          style = "Bold";
+        };
+        italic = {
+          family = "FiraCode Nerd Font";
+          style = "Italic";
+        };
+        size = 12.0;
+      };
     };
   };
 
