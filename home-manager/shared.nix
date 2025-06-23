@@ -126,23 +126,17 @@
     };
 
     # TODO: Remove override after PR #389256 goes to unstable
-    plugins = let
-      yankring = pkgs.vimPlugins.YankRing-vim.overrideAttrs {
-        sourceRoot = null;
-      };
-    in
-      with pkgs.vimPlugins; [
-        vim-sensible
-        vim-gitgutter
-        vim-airline
-        yankring
-        telescope-nvim
-        undotree
-        harpoon
-        vim-dadbod
-        vim-dadbod-ui
-        nvim-treesitter-parsers.templ
-      ];
+    plugins = with pkgs.vimPlugins; [
+      vim-sensible
+      vim-gitgutter
+      vim-airline
+      telescope-nvim
+      undotree
+      harpoon
+      vim-dadbod
+      vim-dadbod-ui
+      nvim-treesitter-parsers.templ
+    ];
 
     extraPackages = with pkgs; [
       nixd
