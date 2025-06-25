@@ -207,6 +207,9 @@
       source = ./starship/starship.toml;
       force = true;
     };
+    ".config/git/ignore".text = ''
+      .DS_Store
+    '';
   };
 
   programs.jujutsu = {
@@ -223,9 +226,7 @@
           "--when" = {
             repositories = ["~/Work"];
           };
-        }
-        {
-          "user" = {
+          user = {
             email = "andre@green-got.com";
           };
         }
@@ -260,6 +261,9 @@
       };
       branch = {
         sort = "-committerdate";
+      };
+      core = {
+        excludesfile = "~/.config/git/ignore";
       };
     };
     includes = [
