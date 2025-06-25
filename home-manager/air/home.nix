@@ -12,8 +12,7 @@
 
   home.packages = with pkgs; [
     # fonts
-    noto-fonts-emoji
-    fira-code-nerdfont
+    nerd-fonts.fira-code
 
     # Apps
     unstable.obsidian

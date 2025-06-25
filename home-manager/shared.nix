@@ -212,6 +212,27 @@
   programs.jujutsu = {
     enable = true;
     package = pkgs.unstable.jujutsu;
+    settings = {
+      "$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json";
+      user = {
+        name = "André Oliveira";
+        email = "p32blo@gmail.com";
+      };
+      "--scope" = [
+        {
+          "--when" = {
+            repositories = ["~/Work"];
+          };
+        }
+        {
+          "user" = {
+            email = "andre@green-got.com";
+          };
+        }
+      ];
+
+      ui.default-command = "log";
+    };
   };
 
   programs.git = {
