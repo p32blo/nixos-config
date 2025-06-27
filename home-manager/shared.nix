@@ -27,6 +27,7 @@
     };
     bashrcExtra = ''
       export PATH=$PATH:/nix/var/nix/profiles/default/bin/
+      . "$HOME/.cargo/env"
     '';
     enableCompletion = false;
   };
@@ -40,6 +41,8 @@
       set fish_greeting # Disable greeting
       source "$HOME/.cargo/env.fish"
       eval "$(/opt/homebrew/bin/brew shellenv)"
+      export RUSTC_WRAPPER=sccache
+      alias docker=podman
     '';
   };
 
@@ -82,8 +85,24 @@
           name = "go";
           auto-format = true;
         }
+        {
+          name = "sql";
+          language-servers = ["sqruff"];
+          formatter = {
+            command = "sqruff";
+            args = ["fix" "-"];
+          };
+          auto-format = true;
+        }
       ];
-      language-server.nixd.command = "nixd";
+      language-server = {
+        nixd = {
+          command = "nixd";
+        };
+        rust-analyzer = {
+          config.check.command = "clippy";
+        };
+      };
     };
   };
 

@@ -14,9 +14,19 @@
     # fonts
     nerd-fonts.fira-code
 
+    # macos
+
+    # Not using for now
+    # raycast
+
     # Apps
-    unstable.obsidian
     blender
+    firefox
+    unstable.obsidian
+
+    # Dev
+    bruno
+    pulumi
   ];
 
   programs.alacritty = {
