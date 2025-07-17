@@ -50,6 +50,17 @@
     };
   };
 
+  # Don't add this to rpi4 since it is very big (> 1 Gb)
+  programs.yazi = {
+    enable = true;
+    enableFishIntegration = true;
+    package = pkgs.yazi.override {
+      extraPackages = [
+        pkgs.ueberzugpp
+      ];
+    };
+  };
+
   home.username = "andre";
   home.homeDirectory = "/Users/andre";
 

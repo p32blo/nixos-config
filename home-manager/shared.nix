@@ -123,16 +123,6 @@
     enableFishIntegration = true;
   };
 
-  programs.yazi = {
-    enable = true;
-    enableFishIntegration = true;
-    package = pkgs.yazi.override {
-      extraPackages = [
-        pkgs.ueberzugpp
-      ];
-    };
-  };
-
   programs.zellij = {
     enable = true;
     package = pkgs.unstable.zellij;
