@@ -182,6 +182,10 @@
       ];
 
       ui.default-command = "log";
+      revset-aliases = {
+        "wip()" = "description(glob:'wip:*')";
+      };
+      git.private-commits = "wip()";
     };
   };
 
