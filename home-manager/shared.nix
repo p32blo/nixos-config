@@ -106,66 +106,6 @@
     };
   };
 
-  programs.neovim = {
-    enable = true;
-    viAlias = true;
-    extraConfig = ''
-      set mouse=a
-      set number
-    '';
-    extraLuaConfig = ''
-      vim.g.mapleader = ' '
-
-      vim.api.nvim_set_keymap('n', 'ç', ':', { noremap = true, silent = false })
-      vim.api.nvim_set_keymap('v', 'ç', ':', { noremap = true, silent = false })
-
-      vim.api.nvim_set_keymap('n', '<leader>o', 'o<esc>', { noremap = true, silent = false })
-      vim.api.nvim_set_keymap('n', '<leader>O', 'O<esc>', { noremap = true, silent = false })
-
-      vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = false })
-    '';
-    coc = {
-      enable = true;
-      settings = {
-        languageserver = {
-          nix = {
-            command = "nixd";
-            filetypes = ["nix"];
-          };
-          python = {
-            command = "pyright";
-            filetypes = ["python"];
-          };
-          go = {
-            command = "gopls";
-            filetypes = ["go" "gomod"];
-          };
-        };
-      };
-    };
-
-    # TODO: Remove override after PR #389256 goes to unstable
-    plugins = with pkgs.vimPlugins; [
-      vim-sensible
-      vim-gitgutter
-      vim-airline
-      telescope-nvim
-      undotree
-      harpoon
-      vim-dadbod
-      vim-dadbod-ui
-      nvim-treesitter-parsers.templ
-    ];
-
-    extraPackages = with pkgs; [
-      nixd
-      pyright
-      python311Packages.pylint
-      python311Packages.pylint-django
-      gopls
-    ];
-  };
-
   programs.lesspipe.enable = true;
 
   programs.fzf = {
