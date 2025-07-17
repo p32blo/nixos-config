@@ -27,6 +27,9 @@
     # Dev
     bruno
     pulumi
+
+    # Unix Tools
+    unixtools.watch
   ];
 
   programs.alacritty = {
