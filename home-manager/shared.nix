@@ -57,6 +57,7 @@
   programs.helix = {
     enable = true;
     defaultEditor = true;
+    package = pkgs.unstable.helix;
     extraPackages = with pkgs; [
       golangci-lint-langserver
     ];
