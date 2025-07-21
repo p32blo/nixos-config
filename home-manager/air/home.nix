@@ -28,6 +28,7 @@
     # Dev
     bruno
     pulumi
+    flyctl
 
     # Unix Tools
     unixtools.watch
