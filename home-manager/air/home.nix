@@ -23,6 +23,7 @@
     blender
     firefox
     unstable.obsidian
+    discord
 
     # Dev
     bruno
