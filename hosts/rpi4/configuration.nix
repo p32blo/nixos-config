@@ -59,6 +59,9 @@ in {
   services.gitea.enable = true;
   programs.mosh.enable = true;
 
+  services.speechd.enable = false;
+  services.tumbler.enable = lib.mkForce false;
+
   # virtualisation.containers.enable = true;
   # virtualisation = {
   #   podman = {

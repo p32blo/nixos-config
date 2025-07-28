@@ -7,7 +7,7 @@
   home.homeDirectory = "/home/andre";
 
   home.packages = with pkgs; [
-    librewolf
+    # librewolf
     alacritty
     devenv
   ];
