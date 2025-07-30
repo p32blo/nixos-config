@@ -24,6 +24,7 @@
     firefox
     unstable.obsidian
     discord
+    dbeaver-bin
 
     # Dev
     bruno
@@ -60,8 +61,8 @@
     enable = true;
     enableFishIntegration = true;
     package = pkgs.yazi.override {
-      extraPackages = [
-        pkgs.ueberzugpp
+      extraPackages = with pkgs; [
+        ueberzugpp
       ];
     };
   };
