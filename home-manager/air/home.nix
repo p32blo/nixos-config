@@ -32,7 +32,7 @@
     (pulumi.withPackages
       (ps:
         with ps; [
-          pulumi-language-nodejs
+          pulumi-nodejs
           pulumi-aws-native
         ]))
     flyctl
