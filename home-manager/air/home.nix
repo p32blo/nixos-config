@@ -28,7 +28,13 @@
 
     # Dev
     bruno
-    pulumi
+    nodejs
+    (pulumi.withPackages
+      (ps:
+        with ps; [
+          pulumi-language-nodejs
+          pulumi-aws-native
+        ]))
     flyctl
 
     # Unix Tools
