@@ -7,10 +7,10 @@
 
   # Select internationalisation properties.
   i18n = {
-    defaultLocale = "en_US.UTF-8";
+    defaultLocale = "en_GB.UTF-8";
     extraLocaleSettings = {
-      LC_ALL = "pt_PT.UTF-8";
-      LC_CTYPE = "pt_PT.UTF-8";
+      LC_ALL = "en_GB.UTF-8";
+      LC_CTYPE = "en_GB.UTF-8";
     };
   };
 }
