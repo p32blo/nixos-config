@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
@@ -25,10 +29,13 @@
     shellAliases = {
       ws = "rg --files-with-matches '[^\n]\z'";
     };
-    bashrcExtra = ''
-      export PATH=$PATH:/nix/var/nix/profiles/default/bin/
-      . "$HOME/.cargo/env"
-    '';
+    bashrcExtra =
+      ''
+        export PATH=$PATH:/nix/var/nix/profiles/default/bin/
+      ''
+      + lib.optionalString (pkgs.stdenv.isDarwin) ''
+        . "$HOME/.cargo/env"
+      '';
     enableCompletion = false;
   };
 
@@ -40,9 +47,10 @@
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
       source "$HOME/.cargo/env.fish"
-      eval "$(/opt/homebrew/bin/brew shellenv)"
       export RUSTC_WRAPPER=sccache
-      alias docker=podman
+      ${lib.optionalString (pkgs.stdenv.isDarwin) ''
+        eval (/opt/homebrew/bin/brew shellenv)
+      ''}
     '';
   };
 

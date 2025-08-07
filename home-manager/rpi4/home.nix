@@ -22,4 +22,8 @@
     package = pkgs.vanilla-dmz;
     gtk.enable = true;
   };
+
+  home.sessionVariables = {
+    TERM = "xterm-256color";
+  };
 }

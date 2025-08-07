@@ -10,9 +10,5 @@
 
     # Docker
     dive
-
-    # Podman
-    podman
-    podman-compose
   ];
 }
