@@ -130,11 +130,19 @@
     enableFishIntegration = true;
     settings = {
       default_mode = "locked";
-      default_layout = "default"; # change to "compact" later
+      default_layout = "compact"; # change to "compact" later
       pane_frames = false;
       ui.pane_frames.rounded_corners = true;
       default_shell = "fish";
       show_startup_tips = false;
+      plugins = {
+        "compact-bar" = {
+          _props = {
+            location = "zellij:compact-bar";
+          };
+          tooltip = "F1";
+        };
+      };
     };
   };
 
