@@ -17,7 +17,7 @@
     insomnia
     unstable.bruno
 
-    blender
+    # blender
     gimp
     wireshark
     vlc

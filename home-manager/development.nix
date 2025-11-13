@@ -2,11 +2,11 @@
   home.packages = with pkgs; [
     # Rust Dev
     bacon
-    sccache
+    # sccache
 
     #rustc # nightly rust is needed
     #cargo
-    lld
+    # lld
 
     # Docker
     dive

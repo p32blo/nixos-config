@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ../shared.nix
     ../development.nix
@@ -20,21 +21,25 @@
     # raycast
 
     # Apps
-    blender
-    firefox
     unstable.obsidian
     discord
-    dbeaver-bin
+    unstable.dbeaver-bin
+    unstable.zed-editor
+
+    # Not working in 25.11
+    # blender
+    # firefox
+    # unstable.gimp
+    # unstable.bruno
 
     # Dev
-    bruno
     nodejs
-    (pulumi.withPackages
-      (ps:
-        with ps; [
-          pulumi-nodejs
-          pulumi-aws-native
-        ]))
+    (pulumi.withPackages (
+      ps: with ps; [
+        pulumi-nodejs
+        pulumi-aws-native
+      ]
+    ))
     flyctl
 
     # Unix Tools

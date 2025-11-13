@@ -7,12 +7,13 @@
 
   home.packages = with pkgs; [
     rlwrap
-    du-dust
+    dust
     duf
     rsync
     file
     mtr
     alejandra
+    nixfmt-rfc-style
     # gupnp-tools # SSDP CLI (disabled - it brings gtk which is to heavy)
     hyperfine
     neofetch
@@ -47,7 +48,7 @@
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
       source "$HOME/.cargo/env.fish"
-      export RUSTC_WRAPPER=sccache
+      # export RUSTC_WRAPPER=sccache
       ${lib.optionalString (pkgs.stdenv.isDarwin) ''
         eval (/opt/homebrew/bin/brew shellenv)
       ''}

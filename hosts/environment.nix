@@ -15,7 +15,7 @@
 
       eza
       bat
-      du-dust
+      dust
       dua
       ripgrep
       fd
