@@ -2,8 +2,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   imports = [
     ../shared.nix
     ../development.nix
@@ -35,10 +34,11 @@
     # Dev
     nodejs
     (pulumi.withPackages (
-      ps: with ps; [
-        pulumi-nodejs
-        pulumi-aws-native
-      ]
+      ps:
+        with ps; [
+          pulumi-nodejs
+          pulumi-aws-native
+        ]
     ))
     flyctl
 

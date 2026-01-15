@@ -26,7 +26,10 @@
 
   programs.bash = {
     enable = true;
-    historyControl = ["ignoredups" "ignorespace"]; # change to "ignoreboth" on next Release
+    historyControl = [
+      "ignoredups"
+      "ignorespace"
+    ]; # change to "ignoreboth" on next Release
     shellAliases = {
       ws = "rg --files-with-matches '[^\n]\z'";
     };
@@ -79,7 +82,10 @@
       language = [
         {
           name = "templ";
-          language-servers = ["templ" "tailwindcss-ls"];
+          language-servers = [
+            "templ"
+            "tailwindcss-ls"
+          ];
           auto-format = true;
         }
         {
@@ -100,7 +106,10 @@
           language-servers = ["sqruff"];
           formatter = {
             command = "sqruff";
-            args = ["fix" "-"];
+            args = [
+              "fix"
+              "-"
+            ];
           };
           auto-format = true;
         }
@@ -158,7 +167,13 @@
   programs.eza = {
     enable = true;
     enableFishIntegration = true;
-    extraOptions = ["--git" "--group" "--group-directories-first" "--header" "--sort=extension"];
+    extraOptions = [
+      "--git"
+      "--group"
+      "--group-directories-first"
+      "--header"
+      "--sort=extension"
+    ];
   };
 
   programs.bat.enable = true;
