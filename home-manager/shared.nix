@@ -209,15 +209,17 @@
 
   programs.git = {
     enable = true;
-    userName = "André Oliveira";
-    userEmail = "p32blo@gmail.com";
-    aliases = {
-      st = "status";
-      co = "checkout";
-      br = "branch --column";
-      tree = "log --graph --oneline --decorate";
-    };
-    extraConfig = {
+    settings = {
+      user = {
+        name = "André Oliveira";
+        email = "p32blo@gmail.com";
+      };
+      alias = {
+        st = "status";
+        co = "checkout";
+        br = "branch --column";
+        tree = "log --graph --oneline --decorate";
+      };
       push = {
         autoSetupRemote = true;
       };
