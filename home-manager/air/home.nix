@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ../shared.nix
     ../development.nix
@@ -24,12 +20,14 @@
     discord
     unstable.dbeaver-bin
     unstable.zed-editor
+    vscode-extensions.ms-python.debugpy
+    unstable.zig
 
     # Not working in 25.11
     # blender
     # firefox
     # unstable.gimp
-    # unstable.bruno
+    unstable.bruno
 
     # Dev
     nodejs

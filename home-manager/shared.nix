@@ -22,6 +22,9 @@
     nh
     nix-tree
     nixd
+    xq-xml
+    libxml2
+    xmlstarlet
   ];
 
   programs.bash = {
