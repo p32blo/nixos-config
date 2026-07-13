@@ -27,15 +27,17 @@
     xmlstarlet
   ];
 
+  home.shellAliases = {
+    ws = "rg --files-with-matches '[^\n]\z'";
+    zj = "zellij";
+  };
+
   programs.bash = {
     enable = true;
     historyControl = [
       "ignoredups"
       "ignorespace"
     ]; # change to "ignoreboth" on next Release
-    shellAliases = {
-      ws = "rg --files-with-matches '[^\n]\z'";
-    };
     bashrcExtra =
       ''
         export PATH=$PATH:/nix/var/nix/profiles/default/bin/
@@ -48,9 +50,6 @@
 
   programs.fish = {
     enable = true;
-    shellAliases = {
-      ws = "rg --files-with-matches '[^\n]\z'";
-    };
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
       source "$HOME/.cargo/env.fish"
@@ -58,6 +57,10 @@
       ${lib.optionalString (pkgs.stdenv.isDarwin) ''
         eval (/opt/homebrew/bin/brew shellenv)
       ''}
+
+      if status is-interactive; and not set -q ZELLIJ; and not set -q NO_ZELLIJ
+        zellij
+      end
     '';
   };
 
@@ -148,7 +151,7 @@
   programs.zellij = {
     enable = true;
     package = pkgs.unstable.zellij;
-    enableFishIntegration = true;
+    enableFishIntegration = false;
     settings = {
       default_mode = "locked";
       default_layout = "compact"; # change to "compact" later
