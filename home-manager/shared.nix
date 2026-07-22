@@ -52,9 +52,9 @@
     enable = true;
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
-      source "$HOME/.cargo/env.fish"
       # export RUSTC_WRAPPER=sccache
       ${lib.optionalString (pkgs.stdenv.isDarwin) ''
+        source "$HOME/.cargo/env.fish"
         eval (/opt/homebrew/bin/brew shellenv)
       ''}
 
