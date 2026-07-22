@@ -35,12 +35,13 @@
     };
   };
 
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 2 * 1024;
-    }
-  ];
+  # Use `zramSwap` instead of `swapDevices` to
+  # reduce writes in the SDCard of the rpi4
+  # (previously it was a 2Gb swapfile in /var/lib)
+  zramSwap = {
+    enable = true;
+    memoryPercent = 50;
+  };
 
   hardware.enableRedistributableFirmware = true;
 }
