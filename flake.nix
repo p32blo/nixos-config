@@ -42,14 +42,14 @@
           inherit nixgl;
         };
         modules = [
-          ./home-manager/ubuntu/home.nix
+          ./home/ubuntu/home.nix
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
         ];
       };
       "andre@rpi4" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."aarch64-linux";
         modules = [
-          ./home-manager/rpi4/home.nix
+          ./home/rpi4/home.nix
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
         ];
       };
@@ -59,7 +59,7 @@
           inherit nixgl;
         };
         modules = [
-          ./home-manager/ubuntu/home.nix
+          ./home/ubuntu/home.nix
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
         ];
       };
@@ -68,7 +68,7 @@
       nixos-desktop = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./hosts/nixos-desktop/configuration.nix
+          ./os/nixos-desktop/configuration.nix
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
 
           home-manager.nixosModules.home-manager
@@ -76,7 +76,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.andre = import ./home-manager/home-gui.nix;
+            home-manager.users.andre = import ./home/home-gui.nix;
           }
         ];
       };
@@ -84,7 +84,7 @@
         system = "aarch64-linux";
         specialArgs = {inherit inputs;};
         modules = [
-          ./hosts/rpi4/configuration.nix
+          ./os/rpi4/configuration.nix
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
 
           home-manager.nixosModules.home-manager
@@ -92,14 +92,14 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.andre = import ./home-manager/rpi4/home.nix;
+            home-manager.users.andre = import ./home/rpi4/home.nix;
           }
         ];
       };
       nixos = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./hosts/nixos/configuration.nix
+          ./os/nixos/configuration.nix
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
 
           home-manager.nixosModules.home-manager
@@ -107,7 +107,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.andre = import ./home-manager/home.nix;
+            home-manager.users.andre = import ./home/home.nix;
           }
         ];
       };
@@ -125,7 +125,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.andre = import ./home-manager/air/home.nix;
+            home-manager.users.andre = import ./home/air/home.nix;
           }
         ];
       };
