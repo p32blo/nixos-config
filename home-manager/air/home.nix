@@ -4,7 +4,6 @@
     ../development.nix
     # ./gui.nix # Use when all packages are proven to work
   ];
-  nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
     # fonts

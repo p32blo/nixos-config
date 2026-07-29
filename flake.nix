@@ -10,6 +10,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/nix-darwin-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
     };
@@ -23,6 +28,7 @@
   outputs = {
     nixpkgs,
     home-manager,
+    nix-darwin,
     nixgl,
     ...
   } @ inputs: let
@@ -36,7 +42,7 @@
           inherit nixgl;
         };
         modules = [
-          ./home-manager/home-ubuntu.nix
+          ./home-manager/ubuntu/home.nix
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
         ];
       };
@@ -54,16 +60,6 @@
         };
         modules = [
           ./home-manager/ubuntu/home.nix
-          {nixpkgs.overlays = import ./overlays {inherit inputs;};}
-        ];
-      };
-      "andre@air" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system-darwin};
-        extraSpecialArgs = {
-          inherit nixgl;
-        };
-        modules = [
-          ./home-manager/air/home.nix
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
         ];
       };
@@ -112,6 +108,24 @@
             home-manager.useUserPackages = true;
 
             home-manager.users.andre = import ./home-manager/home.nix;
+          }
+        ];
+      };
+    };
+    darwinConfigurations = {
+      air = nix-darwin.lib.darwinSystem {
+        system = system-darwin;
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./darwin/air/configuration.nix
+          {nixpkgs.overlays = import ./overlays {inherit inputs;};}
+
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.andre = import ./home-manager/air/home.nix;
           }
         ];
       };
