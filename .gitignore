@@ -1,0 +1,5 @@
+keys/
+.cache/
+*.qcow2
+result
+
