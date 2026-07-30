@@ -17,10 +17,10 @@
     file
     mtr
     alejandra
-    nixfmt-rfc-style
+    nixfmt
     # gupnp-tools # SSDP CLI (disabled - it brings gtk which is to heavy)
     hyperfine
-    neofetch
+    fastfetch
     deadnix
     statix
     nh

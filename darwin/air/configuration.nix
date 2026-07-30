@@ -5,6 +5,7 @@
 }: {
   nixpkgs.hostPlatform = "aarch64-darwin";
   nixpkgs.config.allowUnfree = true;
+  nix.enable = false;
 
   system.primaryUser = "andre";
   system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
@@ -28,10 +29,4 @@
   ];
 
   programs.fish.enable = true;
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-  nix.optimise.automatic = true;
 }

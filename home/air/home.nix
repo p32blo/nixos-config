@@ -48,6 +48,7 @@
   programs.yazi = {
     enable = true;
     enableFishIntegration = true;
+    shellWrapperName = "y";
     package = pkgs.yazi.override {
       extraPackages = with pkgs; [
         ueberzugpp
