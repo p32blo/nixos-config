@@ -46,13 +46,6 @@
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
         ];
       };
-      "andre@rpi4" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages."aarch64-linux";
-        modules = [
-          ./home/rpi4/home.nix
-          {nixpkgs.overlays = import ./overlays {inherit inputs;};}
-        ];
-      };
       "andre@janine" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
         extraSpecialArgs = {
