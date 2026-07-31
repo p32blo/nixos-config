@@ -87,6 +87,18 @@ in {
   #   distrobox
   # ];
 
+  services.journald = {
+    storage = "volatile";
+    extraConfig = ''
+      SystemMaxUse=200M
+      RuntimeMaxUse=64M
+      MaxLevelStore=info
+      RateLimitIntervalSec=30s
+      RateLimitBurst=500
+      Compress=yes
+    '';
+  };
+
   environment.systemPackages = with pkgs; [
     libraspberrypi
     raspberrypi-eeprom
