@@ -64,6 +64,11 @@
     };
   };
 
+  programs.nix-index = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
   # Don't add this to rpi4 since it is very big (> 1 Gb)
   programs.yazi = {
     enable = true;
