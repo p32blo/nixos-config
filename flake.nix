@@ -42,6 +42,20 @@
     system-darwin = "aarch64-darwin";
   in {
     homeConfigurations = {
+      "root@sandbox-andre-nix" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        modules = [
+          ./home/shared.nix
+          {
+            home.username = "root";
+            home.homeDirectory = "/root";
+            home.stateVersion = "24.05";
+            programs.home-manager.enable = true;
+            targets.genericLinux.enable = true;
+            nixpkgs.overlays = import ./overlays {inherit inputs;};
+          }
+        ];
+      };
       p32blo = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
         extraSpecialArgs = {
