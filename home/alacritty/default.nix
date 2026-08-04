@@ -33,6 +33,11 @@ in {
         };
         size = 12.0;
       };
+      terminal = {
+        shell = {
+          program = "${pkgs.fish}/bin/fish";
+        };
+      };
     };
   };
 

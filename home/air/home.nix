@@ -61,6 +61,11 @@
   home.username = "andre";
   home.homeDirectory = "/Users/andre";
 
+  home.sessionVariables = {
+    LANG = "en_US.UTF-8";
+    LC_CTYPE = "en_US.UTF-8";
+  };
+
   home.stateVersion = "24.05";
   programs.home-manager.enable = true;
 }
