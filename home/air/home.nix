@@ -1,17 +1,8 @@
-{
-  lib,
-  pkgs,
-  ...
-}: let
-  alacrittyThemeSwitcher = "${pkgs.writeShellApplication {
-    name = "alacritty-theme";
-    runtimeInputs = [pkgs.coreutils];
-    text = builtins.readFile ../alacritty/theme-switcher.sh;
-  }}/bin/alacritty-theme";
-in {
+{pkgs, ...}: {
   imports = [
     ../shared.nix
     ../development.nix
+    ../alacritty
     # ./gui.nix # Use when all packages are proven to work
   ];
 
@@ -53,63 +44,8 @@ in {
     unixtools.watch
   ];
 
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      general = {
-        import = [
-          "~/.config/alacritty/theme.toml"
-        ];
-        live_config_reload = true;
-      };
-      font = {
-        normal = {
-          family = "FiraCode Nerd Font";
-          style = "Regular";
-        };
-        bold = {
-          family = "FiraCode Nerd Font";
-          style = "Bold";
-        };
-        italic = {
-          family = "FiraCode Nerd Font";
-          style = "Italic";
-        };
-        size = 12.0;
-      };
-    };
-  };
-
   programs.nix-index.enable = true;
   programs.nix-index-database.comma.enable = true;
-
-  home.file = {
-    ".config/alacritty/catppuccin-latte.toml" = {
-      source = ../alacritty/catppuccin-latte.toml;
-    };
-
-    ".config/alacritty/catppuccin-mocha.toml" = {
-      source = ../alacritty/catppuccin-mocha.toml;
-    };
-  };
-
-  home.activation.setAlacrittyTheme = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    ${alacrittyThemeSwitcher}
-  '';
-
-  launchd.agents.alacritty-theme = {
-    enable = true;
-    config = {
-      ProgramArguments = [
-        "${pkgs.dark-mode-notify}/bin/dark-mode-notify"
-        "${alacrittyThemeSwitcher}"
-      ];
-      RunAtLoad = true;
-      KeepAlive = true;
-      StandardOutPath = "/tmp/alacritty-theme.log";
-      StandardErrorPath = "/tmp/alacritty-theme.log";
-    };
-  };
 
   # Don't add this to rpi4 since it is very big (> 1 Gb)
   programs.yazi = {
