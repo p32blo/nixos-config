@@ -9,6 +9,10 @@
     text = builtins.readFile ./theme-switcher.sh;
   }}/bin/alacritty-theme";
 in {
+  home.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
+
   programs.alacritty = {
     enable = true;
     settings = {
@@ -20,18 +24,29 @@ in {
       };
       font = {
         normal = {
-          family = "FiraCode Nerd Font";
-          style = "Regular";
+          family = "JetBrainsMono Nerd Font";
+          style = "Light";
         };
         bold = {
-          family = "FiraCode Nerd Font";
-          style = "Bold";
+          family = "JetBrainsMono Nerd Font";
+          style = "Medium";
         };
         italic = {
-          family = "FiraCode Nerd Font";
-          style = "Italic";
+          family = "JetBrainsMono Nerd Font";
+          style = "Light Italic";
         };
-        size = 12.0;
+        bold_italic = {
+          family = "JetBrainsMono Nerd Font";
+          style = "Medium Italic";
+        };
+        glyph_offset = {
+          x = 0;
+          y = 1;
+        };
+        size = 13.0;
+      };
+      colors = {
+        draw_bold_text_with_bright_colors = false;
       };
       terminal = {
         shell = {

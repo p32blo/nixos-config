@@ -7,9 +7,6 @@
   ];
 
   home.packages = with pkgs; [
-    # fonts
-    nerd-fonts.fira-code
-
     # macos
 
     # Not using for now
