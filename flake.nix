@@ -19,6 +19,11 @@
       url = "github:NixOS/nixos-hardware/master";
     };
 
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
     nixgl = {
       url = "github:nix-community/nixGL";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,6 +35,7 @@
     home-manager,
     nix-darwin,
     nixgl,
+    nix-index-database,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -111,6 +117,8 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./darwin/air/configuration.nix
+          nix-index-database.darwinModules.nix-index
+
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
 
           home-manager.darwinModules.home-manager
