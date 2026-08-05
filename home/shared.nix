@@ -85,6 +85,7 @@
     ];
     settings = {
       editor = {
+        true-color = true;
         lsp.display-inlay-hints = true;
       };
     };
