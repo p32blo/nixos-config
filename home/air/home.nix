@@ -64,10 +64,8 @@
     };
   };
 
-  programs.nix-index = {
-    enable = true;
-    enableFishIntegration = true;
-  };
+  programs.nix-index.enable = true;
+  programs.nix-index-database.comma.enable = true;
 
   # Don't add this to rpi4 since it is very big (> 1 Gb)
   programs.yazi = {

@@ -27,11 +27,6 @@
     pkgs.fish
   ];
 
-  programs.nix-index-database = {
-    # enable = true;
-    comma.enable = true;
-  };
-
   programs.fish.enable = true;
 
   nix.settings.experimental-features = [

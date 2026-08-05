@@ -117,7 +117,6 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./darwin/air/configuration.nix
-          nix-index-database.darwinModules.nix-index
 
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
 
@@ -126,7 +125,10 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.andre = import ./home/air/home.nix;
+            home-manager.users.andre.imports = [
+              inputs.nix-index-database.homeModules.nix-index
+              ./home/air/home.nix
+            ];
           }
         ];
       };
