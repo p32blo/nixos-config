@@ -39,6 +39,11 @@
       options = ["subvol=@nix" "compress=zstd" "noatime"];
       neededForBoot = true;
     };
+    "/tmp" = {
+      device = "/dev/disk/by-label/NIX_STORE";
+      fsType = "btrfs";
+      options = ["subvol=@tmp" "compress=zstd" "noatime"];
+    };
   };
 
   # Use `zramSwap` instead of `swapDevices` to
