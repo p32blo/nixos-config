@@ -33,6 +33,12 @@
       fsType = "vfat";
       options = ["noatime"];
     };
+    "/nix" = {
+      device = "/dev/disk/by-label/NIX_STORE";
+      fsType = "btrfs";
+      options = ["subvol=@nix" "compress=zstd" "noatime"];
+      neededForBoot = true;
+    };
   };
 
   # Use `zramSwap` instead of `swapDevices` to

@@ -10,6 +10,7 @@
     # librewolf
     alacritty
     devenv
+    btrfs-progs
   ];
 
   home.stateVersion = "24.05";
