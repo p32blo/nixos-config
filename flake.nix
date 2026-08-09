@@ -28,6 +28,11 @@
       url = "github:nix-community/nixGL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixflix = {
+      url = "github:kiriwalawren/nixflix/";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs = {
@@ -36,6 +41,7 @@
     nix-darwin,
     nixgl,
     nix-index-database,
+    nixflix,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -91,6 +97,8 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./os/rpi4/configuration.nix
+          nixflix.nixosModules.default
+
           {nixpkgs.overlays = import ./overlays {inherit inputs;};}
 
           home-manager.nixosModules.home-manager

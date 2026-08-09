@@ -12,6 +12,7 @@
       file
       rlwrap
       rsync
+      unzip
 
       eza
       bat
