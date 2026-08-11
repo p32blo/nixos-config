@@ -54,6 +54,11 @@
       fsType = "btrfs";
       options = ["subvol=@swap" "noatime"];
     };
+    "/home" = {
+      device = "/dev/disk/by-label/NIX_STORE";
+      fsType = "btrfs";
+      options = ["subvol=@home" "compress=zstd" "noatime"];
+    };
   };
 
   swapDevices = [
