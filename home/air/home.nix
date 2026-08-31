@@ -39,6 +39,9 @@
 
     # Unix Tools
     unixtools.watch
+
+    # Vm
+    utm
   ];
 
   programs.nix-index.enable = true;
