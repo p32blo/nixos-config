@@ -16,10 +16,10 @@
       grub.enable = false;
       generic-extlinux-compatible.enable = true;
     };
-    # zswap = {
-    #   enable = true;
-    #   maxPoolPercent = 20;
-    # };
+    zswap = {
+      enable = true;
+      maxPoolPercent = 20;
+    };
   };
 
   fileSystems = {
@@ -35,7 +35,12 @@
       options = ["noatime"];
     };
     };
-  swapDevices = [ ];
+  swapDevices = [
+    {
+      device = "/swap/swapfile";
+      size = 2*1024; # 2GB
+    }
+   ];
 
   hardware.enableRedistributableFirmware = true;
   #nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";

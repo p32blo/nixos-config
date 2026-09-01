@@ -47,12 +47,12 @@ in {
 
   # programs.niri.enable = true;
 
-  services.pinchflat = {
-    enable = true;
-    mediaDir = "/data/media/youtube";
-    selfhosted = true;
-    openFirewall = true;
-  };
+  # services.pinchflat = {
+  #   enable = true;
+  #   mediaDir = "/data/media/youtube";
+  #   selfhosted = true;
+  #   openFirewall = true;
+  # };
 
   # programs.nix-ld = {
   #   enable = true;
@@ -192,11 +192,11 @@ in {
       openFirewall = true;
     };
 
-    seerr = {
-      enable = true;
-      apiKey = "NTlhOWFkYTktZWVmMC00NTM3LTg1NjYtMDRiN2Y3NjRjMjI0Cg==";
-      openFirewall = true;
-    };
+    # seerr = {
+    #   enable = true;
+    #   apiKey = "NTlhOWFkYTktZWVmMC00NTM3LTg1NjYtMDRiN2Y3NjRjMjI0Cg==";
+    #   openFirewall = true;
+    # };
 
     # vpn = {
     #   enable = true;
@@ -229,35 +229,35 @@ in {
     jack.enable = true;
   };
 
-  services.gitea.enable = true;
+  # services.gitea.enable = true;
   programs.mosh.enable = true;
 
   services.speechd.enable = false;
   services.tumbler.enable = lib.mkForce false;
 
-  virtualisation = {
-    podman = {
-      enable = true;
-      dockerCompat = true;
-      autoPrune.enable = true;
-    };
+  # virtualisation = {
+  #   podman = {
+  #     enable = true;
+  #     dockerCompat = true;
+  #     autoPrune.enable = true;
+  #   };
 
-    oci-containers = {
-      backend = "podman";
-      containers.homeassistant = {
-        image = "ghcr.io/home-assistant/home-assistant:stable";
-        autoStart = true;
-        volumes = [
-          "/var/lib/homeassistant:/config"
-          "/etc/localtime:/etc/localtime:ro"
-        ];
-        extraOptions = [
-          "--network=host" # Recommended for mDNS/discovery and device tracking
-          # "--device=/dev/serial/by-id/usb-Korbit_Zigbee_Dongle-if00:/dev/zigbee" # Example USB pass-through
-        ];
-      };
-    };
-  };
+  #   oci-containers = {
+  #     backend = "podman";
+  #     containers.homeassistant = {
+  #       image = "ghcr.io/home-assistant/home-assistant:stable";
+  #       autoStart = true;
+  #       volumes = [
+  #         "/var/lib/homeassistant:/config"
+  #         "/etc/localtime:/etc/localtime:ro"
+  #       ];
+  #       extraOptions = [
+  #         "--network=host" # Recommended for mDNS/discovery and device tracking
+  #         # "--device=/dev/serial/by-id/usb-Korbit_Zigbee_Dongle-if00:/dev/zigbee" # Example USB pass-through
+  #       ];
+  #     };
+  #   };
+  # };
 
   services.journald = {
     storage = "volatile";
