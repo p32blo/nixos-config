@@ -17,6 +17,9 @@ in {
 
   networking.hostName = hostname;
 
+  # In order to enable exit node for tailsacale
+  services.tailscale.useRoutingFeatures = "both";
+
   nix.settings.trusted-users = [
     "root"
     "andre"
@@ -33,7 +36,7 @@ in {
     };
   };
 
-  hardware.raspberry-pi."4".fkms-3d.enable = true;
+  # hardware.raspberry-pi."4".fkms-3d.enable = true;
 
   services.xserver = {
     enable = true;
