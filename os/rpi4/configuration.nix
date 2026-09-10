@@ -177,6 +177,7 @@ in {
 
     jellyfin = {
       enable = true;
+      package = pkgs.unstable.jellyfin;
       apiKey = "d1992334d2de1f24dc75e2cccf221406";
       # cacheDir = "/tmp/.cache/jellyfin";
 
