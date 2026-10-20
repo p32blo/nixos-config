@@ -16,6 +16,7 @@
     unstable.obsidian
     discord
     unstable.dbeaver-bin
+    unstable.t3code
     unstable.zed-editor
     vscode-extensions.ms-python.debugpy
     unstable.zig
