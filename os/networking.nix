@@ -46,5 +46,11 @@
   services.tailscale = {
     enable = true;
     package = pkgs.unstable.tailscale;
+
+    useRoutingFeatures = "server";
+    extraSetFlags = [
+      "--advertise-exit-node"
+      "--advertise-routes=192.168.1.0/24" # XXX: Check if the network mask makes sense
+    ];
   };
 }
