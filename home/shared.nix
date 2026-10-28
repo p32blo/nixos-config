@@ -31,6 +31,8 @@
     xmlstarlet
   ];
 
+  home.sessionPath = ["$HOME/.local/bin"];
+
   home.shellAliases = {
     ws = "rg --files-with-matches '[^\n]\z'";
     zj = "zellij";
