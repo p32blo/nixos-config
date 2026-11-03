@@ -18,7 +18,7 @@ in {
   networking.hostName = hostname;
 
   # In order to enable exit node for tailsacale
-  services.tailscale.useRoutingFeatures = "both";
+  #services.tailscale.useRoutingFeatures = "both";
 
   nix.settings.trusted-users = [
     "root"
@@ -204,6 +204,12 @@ in {
     #   wgConfFile = "";
     #   accessibleFrom = ["192.168.1.0/24"];
     # };
+  };
+
+  services.bazarr = {
+    enable = true;
+    openFirewall = true;
+    group = "media";
   };
 
   # services.jellyfin = {
