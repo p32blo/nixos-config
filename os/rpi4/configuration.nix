@@ -103,6 +103,7 @@ in {
       config = {
         apiKey = "9bf58ce2598f984c86cff3f0d2943efa";
         hostConfig.password = "sonarr";
+        hostConfig.bindAddress = "0.0.0.0";
       };
       openFirewall = true;
     };
@@ -112,6 +113,7 @@ in {
       config = {
         apiKey = "48389bb9d9f8babe740b5c75d6977865";
         hostConfig.password = "radarr";
+        hostConfig.bindAddress = "0.0.0.0";
       };
       openFirewall = true;
     };
@@ -146,6 +148,7 @@ in {
           WebUI = {
             Username = "admin";
             LocalHostAuth = false;
+            Address = "*";
             Password_PBKDF2 = "@ByteArray(j6D9vTrWjOmw5j02ASIXAQ==:+DScFwqKrXArZoqNq7winYNX0CJroYrWZzbis9OniYzRgVWZYl1vNwvyMpp2cTdITbiGyuWvrB0fpFcUZMVwuQ==)";
           };
           General.Locale = "en";
@@ -158,6 +161,7 @@ in {
       config = {
         apiKey = "658ddb8742e6257dc7d1a7bf400cb5fe";
         hostConfig.password = "prowlarr";
+        hostConfig.bindAddress = "0.0.0.0";
         indexers = [
           {
             name = "The Pirate Bay";
@@ -179,6 +183,7 @@ in {
       enable = true;
       package = pkgs.unstable.jellyfin;
       apiKey = "d1992334d2de1f24dc75e2cccf221406";
+      network.localNetworkAddresses = ["0.0.0.0"];
       # cacheDir = "/tmp/.cache/jellyfin";
 
       users = {
