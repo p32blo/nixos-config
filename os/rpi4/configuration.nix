@@ -67,14 +67,6 @@ in {
   #   ];
   # };
 
-  services.xserver = {
-    enable = true;
-    desktopManager = {
-      xterm.enable = false;
-      xfce.enable = true;
-    };
-  };
-
   nixflix = {
     enable = true;
     # mediaDir = "/home/nixflix/media";
@@ -223,29 +215,8 @@ in {
   #   user = "andre";
   # };
 
-  # Sets XFCE as default, but allows choosing Niri at the login screen
-  services.displayManager.defaultSession = "xfce";
-
-  services.xrdp = {
-    enable = true;
-    defaultWindowManager = "xfce4-session";
-    openFirewall = true;
-  };
-
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
-
   # services.gitea.enable = true;
   programs.mosh.enable = true;
-
-  services.speechd.enable = false;
-  services.tumbler.enable = lib.mkForce false;
 
   # virtualisation = {
   #   podman = {

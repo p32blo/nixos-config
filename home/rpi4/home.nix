@@ -7,22 +7,12 @@
   home.homeDirectory = "/home/andre";
 
   home.packages = with pkgs; [
-    # librewolf
-    alacritty
     devenv
     btrfs-progs
   ];
 
   home.stateVersion = "24.05";
   programs.home-manager.enable = true;
-
-  home.pointerCursor = {
-    x11.enable = true;
-    name = "DMZ-White";
-    size = 16;
-    package = pkgs.vanilla-dmz;
-    gtk.enable = true;
-  };
 
   home.sessionVariables = {
     TERM = "xterm-256color";
