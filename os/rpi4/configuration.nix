@@ -42,8 +42,8 @@ in {
 
   # hardware.raspberry-pi."4".fkms-3d.enable = true;
   # hardware.raspberry-pi."4".bluetooth.enable = true;
-  # hardware.bluetooth.enable = true;
-  # hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
 
   # programs.niri.enable = true;
 
@@ -235,9 +235,12 @@ in {
         autoStart = true;
         volumes = [
           "/var/lib/homeassistant:/config"
+          "/run/dbus:/run/dbus:ro" # BlueZ access for the Bluetooth integration
         ];
         extraOptions = [
           "--network=host" # Recommended for mDNS/discovery and device tracking
+          "--cap-add=NET_ADMIN" # Bluetooth (BlueZ/HCI)
+          "--cap-add=NET_RAW"
           # "--device=/dev/serial/by-id/usb-Korbit_Zigbee_Dongle-if00:/dev/zigbee" # Example USB pass-through
         ];
       };
