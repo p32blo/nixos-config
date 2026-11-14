@@ -211,6 +211,19 @@ in {
     group = "media";
   };
 
+  # Crash recovery and out-of-memory priorities (1.8 GB RAM, so the OOM killer is
+  # a real possibility). Higher OOMScoreAdjust = killed earlier, lower = killed later.
+  systemd.services = {
+    # qBittorrent had no restart policy, so a crash left it down until noticed.
+    qbittorrent.serviceConfig = {
+      Restart = "on-failure";
+      RestartSec = "10s";
+      OOMScoreAdjust = 500;
+    };
+    bazarr.serviceConfig.OOMScoreAdjust = 300;
+    sshd.serviceConfig.OOMScoreAdjust = -900; # always keep remote access
+  };
+
   # services.jellyfin = {
   #   enable = true;
   #   openFirewall = true;
@@ -243,6 +256,7 @@ in {
           "--network=host" # Recommended for mDNS/discovery and device tracking
           "--cap-add=NET_ADMIN" # Bluetooth (BlueZ/HCI)
           "--cap-add=NET_RAW"
+          "--oom-score-adj=-500" # keep Home Assistant alive longest
           # "--device=/dev/serial/by-id/usb-Korbit_Zigbee_Dongle-if00:/dev/zigbee" # Example USB pass-through
         ];
       };
