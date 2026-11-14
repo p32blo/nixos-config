@@ -222,6 +222,10 @@ in {
     };
     bazarr.serviceConfig.OOMScoreAdjust = 300;
     sshd.serviceConfig.OOMScoreAdjust = -900; # always keep remote access
+
+    # Trial: ask the .NET GC to compact more aggressively and give memory back.
+    # Prowlarr is the least critical .NET service; measure before using on others.
+    prowlarr.environment.DOTNET_GCConserveMemory = "7";
   };
 
   # services.jellyfin = {
