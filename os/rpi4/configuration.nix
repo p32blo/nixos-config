@@ -238,7 +238,7 @@ in {
   # };
 
   # services.gitea.enable = true;
-  programs.mosh.enable = true;
+  # programs.mosh.enable = true;
 
   # Podman fails if the bind-mount source is missing
   systemd.tmpfiles.rules = ["d /var/lib/homeassistant 0755 root root -"];
