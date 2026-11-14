@@ -44,6 +44,8 @@ in {
   # hardware.raspberry-pi."4".bluetooth.enable = true;
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
+  # Needed for passive scanning (AdvertisementMonitor API), used by the Renpho integration
+  hardware.bluetooth.settings.General.Experimental = true;
 
   # programs.niri.enable = true;
 
