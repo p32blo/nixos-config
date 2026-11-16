@@ -20,6 +20,8 @@
       enable = true;
       maxPoolPercent = 20;
     };
+    # Swap is on the SD card; 30 (vs default 60) cut swap writes ~42%
+    kernel.sysctl."vm.swappiness" = 30;
   };
 
   fileSystems = {
