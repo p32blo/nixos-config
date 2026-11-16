@@ -20,12 +20,10 @@
     nixfmt
     # gupnp-tools # SSDP CLI (disabled - it brings gtk which is to heavy)
     hyperfine
-    fastfetch
     deadnix
     statix
     nh
     nix-tree
-    nixd
     xq-xml
     libxml2
     xmlstarlet

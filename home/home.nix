@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./shared.nix
+    ./development.nix
   ];
 
   home.username = "andre";
