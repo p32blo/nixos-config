@@ -138,6 +138,15 @@ in {
       openFirewall = true;
       serverConfig = {
         LegalNotice.Accepted = true;
+        # The unit overwrites qBittorrent.conf with this file on every start, so
+        # anything set only in the web UI is lost on restart. Keep these here.
+        # One active torrent at a time so a restart cannot saturate the SD card.
+        BitTorrent.Session = {
+          QueueingSystemEnabled = true;
+          MaxActiveDownloads = 1;
+          MaxActiveUploads = 1;
+          MaxActiveTorrents = 1;
+        };
         Preferences = {
           WebUI = {
             Username = "admin";
