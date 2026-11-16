@@ -146,6 +146,11 @@ in {
           MaxActiveDownloads = 1;
           MaxActiveUploads = 1;
           MaxActiveTorrents = 1;
+          # Seeding limits: stop a torrent when any of these is reached.
+          GlobalMaxRatio = 1;
+          GlobalMaxSeedingMinutes = 1440; # total seeding time (24 h)
+          GlobalMaxInactiveSeedingMinutes = 1440; # inactive seeding time (24 h)
+          ShareLimitAction = "Stop";
         };
         Preferences = {
           WebUI = {
